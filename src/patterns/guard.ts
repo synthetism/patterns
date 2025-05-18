@@ -414,7 +414,7 @@ export class Guard {
 
       // This cast is safe because we've verified the property exists
       return Result.success(obj as T & Record<K, unknown>);
-},
+    },
 
     /**
      * Validates that an object is not empty
