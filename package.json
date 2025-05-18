@@ -18,7 +18,7 @@
     "clean": "rm -rf dist",
     "coverage": "vitest run --coverage",
     "lint": "biome lint ./src",
-    "format": "biome format ./src",
+    "format": "biome format --write ./src",
     "prepublishOnly": "npm run lint && npm run build",
     "publish:dig": "npm publish --registry https://registry.dig.run",
     "unpublish:dig": "npm unpublish @synet/net --registry https://registry.dig.run  --force",
