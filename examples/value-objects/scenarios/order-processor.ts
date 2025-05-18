@@ -1,13 +1,24 @@
-import { Result } from '../../src/patterns';
-import { ResultExtensions } from '../../src/extensions/result-extensions';
-import { OrderId } from '../value-objects/orderId';
-import { Order } from '../value-objects/order';
-import { orderRepository } from '../repositories/order-repository';
+import { Result } from '../../../src/patterns';
+import { ResultExtensions } from '../../../src/extensions/result-extensions';
+import { OrderId } from '../orderId';
+import { Order } from '../order';
+
 
 interface PaymentResult {
     transactionId: string;
     status: string; 
 }
+interface IOrderRespository {
+
+    findById(id: OrderId): Result<OrderId>;
+}
+
+export class orderRepository implements IOrderRespository {
+ 
+        findById = (id: OrderId): Result<OrderId> => {
+            return Result.fail('id not found');
+        }
+};
 
 
 export class OrderProcessor {
@@ -53,3 +64,5 @@ export class OrderProcessor {
     });
 }
 }
+
+export const orderProcessor = new OrderProcessor(new orderRepository());
