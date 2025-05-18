@@ -175,4 +175,12 @@ export class Result<T> {
       ? this 
       : Result.fail(message);
   }
+  /**
+   * Checks if the result is null
+   * @returns true if the result is null, false otherwise
+   * */
+  
+  public isNull(): boolean {
+  return this.isSuccess && this.value === null;
+  }
 }

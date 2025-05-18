@@ -243,4 +243,15 @@ describe('Result Pattern', () => {
       expect(laterStepExecuted).toBe(false);
     });
   });
+
+    describe('null method', () => {
+    it('should result true if result is null', () => {
+      const result = Result.success(null)
+      const isNull = result.isNull();
+      
+      expect(isNull).toBe(true);
+
+    });
+  })
+
 });
