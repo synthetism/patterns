@@ -1,0 +1,49 @@
+{
+  "name": "@synet/patterns",
+  "version": "1.0.0",
+  "description": "Pattern Recognition. Code is just a series of altered patterns. The programmer creates the pattern and makes us anticipate a resolution... then holds back. Makes you wait for it. There's patterns in everything and everyone. ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synthetism/synet/packages/patterns.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "dev:test": "vitest",
+    "clean": "rm -rf dist",
+    "coverage": "vitest run --coverage",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src",
+    "prepublishOnly": "npm run lint && npm run build",
+    "publish:dig": "npm publish --registry https://registry.dig.run",
+    "unpublish:dig": "npm unpublish @synet/net --registry https://registry.dig.run  --force",
+    "publish:local": "npm publish --registry https://dig.test:4873",
+    "unpublish:local": "npm unpublish --registry https://dig.test:4873  --force"    
+  },
+  "keywords": [
+    "Synet",
+    "Synet AI-to-AI network",
+    "Synthetism",
+    "Synthetic Minds",
+    "Patterns",
+    "Pattern Recognition"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.15.17",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "0en",
+  "homepage": "https://synthetism.ai/docs/synet-dev/patterns"
+}
