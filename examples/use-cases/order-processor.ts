@@ -2,7 +2,7 @@ import { Result } from '../../src/patterns';
 import { ResultExtensions } from '../../src/extensions/result-extensions';
 import { OrderId } from '../value-objects/orderId';
 import { Order } from '../value-objects/order';
-import { orderRepository } from './order-repository';
+import { orderRepository } from '../repositories/order-repository';
 
 interface PaymentResult {
     transactionId: string;
