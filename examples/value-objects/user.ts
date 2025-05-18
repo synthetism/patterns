@@ -2,7 +2,7 @@ import { Result, ValueObject } from '../../src/patterns';
 import { ResultExtensions } from '../../src/extensions/result-extensions';
 import { Email } from './email';
 import { UserId } from './userId';
-class User {
+export class User {
   private constructor(  
     public readonly id: UserId,
     public readonly email: Email,
