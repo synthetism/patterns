@@ -1,4 +1,4 @@
-import { Result, ValueObject } from '../../patterns';
+import { Result, ValueObject } from "../../patterns";
 
 interface EmailProps {
   value: string;
@@ -11,11 +11,11 @@ export class Email extends ValueObject<EmailProps> {
 
   public static create(email: string): Result<Email> {
     if (!email || email.trim().length === 0) {
-      return Result.fail('Email cannot be empty');
+      return Result.fail("Email cannot be empty");
     }
-    
+
     if (!Email.isValidEmail(email)) {
-      return Result.fail('Email is not in valid format');
+      return Result.fail("Email is not in valid format");
     }
 
     return Result.success(new Email({ value: email.toLowerCase() }));
@@ -29,7 +29,7 @@ export class Email extends ValueObject<EmailProps> {
   get value(): string {
     return this.props.value;
   }
-  
+
   toString(): string {
     return this.props.value;
   }

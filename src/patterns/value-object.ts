@@ -1,22 +1,25 @@
 /**
- * Base class for Value Objects
- * 
- * Value Objects are immutable objects that are distinguishable only by the state of their properties.
- * They have no identity and are considered equal when their properties are equal.
- * 
+ * Base class for Value Objects - immutable objects defined by their property values.
+ *
+ * Value Objects encapsulate domain concepts that have no distinct identity.
+ * Two Value Objects are equal when all their properties are equal.
+ *
+ * @see /docs/value-object.md for detailed documentation and examples
+ *
+ * @template T - The shape of properties that define this Value Object
  * @example
  * class Email extends ValueObject<{ address: string }> {
  *   private constructor(props: { address: string }) {
  *     super(props);
  *   }
- *   
+ *
  *   public static create(address: string): Result<Email> {
  *     if (!address.includes('@')) {
  *       return Result.fail('Email must contain @ symbol');
  *     }
  *     return Result.success(new Email({ address }));
  *   }
- *   
+ *
  *   get value(): string {
  *     return this.props.address;
  *   }
@@ -45,11 +48,11 @@ export abstract class ValueObject<T extends object> {
     if (vo === null || vo === undefined) {
       return false;
     }
-    
+
     if (!(vo instanceof this.constructor)) {
       return false;
     }
-    
+
     return this.isEqual(this.props, vo.props);
   }
 
@@ -61,24 +64,31 @@ export abstract class ValueObject<T extends object> {
     if (obj1 === obj2) {
       return true;
     }
-    
-    if (typeof obj1 !== 'object' || obj1 === null || 
-        typeof obj2 !== 'object' || obj2 === null) {
+
+    if (
+      typeof obj1 !== "object" ||
+      obj1 === null ||
+      typeof obj2 !== "object" ||
+      obj2 === null
+    ) {
       return obj1 === obj2;
     }
-    
+
     const keys1 = Object.keys(obj1 as object);
     const keys2 = Object.keys(obj2 as object);
-    
+
     if (keys1.length !== keys2.length) {
       return false;
     }
-    
-    return keys1.every(key => {
+
+    return keys1.every((key) => {
       // Type assertion needed because TypeScript doesn't recognize keys1/keys2 are keys of obj1/obj2
-      return keys2.includes(key) && this.isEqual(
-        (obj1 as Record<string, unknown>)[key], 
-        (obj2 as Record<string, unknown>)[key]
+      return (
+        keys2.includes(key) &&
+        this.isEqual(
+          (obj1 as Record<string, unknown>)[key],
+          (obj2 as Record<string, unknown>)[key],
+        )
       );
     });
   }

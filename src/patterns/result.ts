@@ -10,7 +10,7 @@ export class Result<T> {
       message: string;
       cause?: Error;
       data?: unknown[];
-    }
+    },
   ) {}
 
   /**
@@ -41,7 +41,9 @@ export class Result<T> {
   /**
    * Returns the error details if this is a failure result
    */
-  public get error(): { message: string; cause?: Error; data?: unknown[] } | undefined {
+  public get error():
+    | { message: string; cause?: Error; data?: unknown[] }
+    | undefined {
     return this._error;
   }
 
@@ -73,11 +75,15 @@ export class Result<T> {
    * @param cause Optional underlying error that caused the failure
    * @param data Optional additional context data for debugging
    */
-  public static fail<T>(message: string, cause?: Error, ...data: unknown[]): Result<T> {
+  public static fail<T>(
+    message: string,
+    cause?: Error,
+    ...data: unknown[]
+  ): Result<T> {
     return new Result<T>(false, undefined, {
       message,
       cause,
-      data: data.length > 0 ? data : undefined
+      data: data.length > 0 ? data : undefined,
     });
   }
 
@@ -98,7 +104,9 @@ export class Result<T> {
    * @param fn Function to execute with the error details
    * @returns This result, for method chaining
    */
-  public onFailure(fn: (message: string, cause?: Error, data?: unknown[]) => void): Result<T> {
+  public onFailure(
+    fn: (message: string, cause?: Error, data?: unknown[]) => void,
+  ): Result<T> {
     if (this.isFailure && this._error) {
       fn(this._error.message, this._error.cause, this._error.data);
     }
@@ -117,7 +125,7 @@ export class Result<T> {
     return Result.fail(
       this._error?.message || "Unknown error",
       this._error?.cause,
-      ...(this._error?.data || [])
+      ...(this._error?.data || []),
     );
   }
 
@@ -131,9 +139,9 @@ export class Result<T> {
       return fn(this.value);
     }
     return Result.fail(
-      this._error?.message || "Unknown error", 
+      this._error?.message || "Unknown error",
       this._error?.cause,
-      ...(this._error?.data || [])
+      ...(this._error?.data || []),
     );
   }
 
@@ -154,7 +162,11 @@ export class Result<T> {
    * @param fn Function that provides a recovery value
    * @returns A success result with either the original or recovered value
    */
-  public recoverWith(fn: (error: { message: string; cause?: Error; data?: unknown[] } | undefined) => T): Result<T> {
+  public recoverWith(
+    fn: (
+      error: { message: string; cause?: Error; data?: unknown[] } | undefined,
+    ) => T,
+  ): Result<T> {
     if (this.isSuccess) {
       return this;
     }
@@ -171,16 +183,14 @@ export class Result<T> {
     if (!this.isSuccess) {
       return this;
     }
-    return condition(this.value) 
-      ? this 
-      : Result.fail(message);
+    return condition(this.value) ? this : Result.fail(message);
   }
   /**
    * Checks if the result is null
    * @returns true if the result is null, false otherwise
    * */
-  
+
   public isNull(): boolean {
-  return this.isSuccess && this.value === null;
+    return this.isSuccess && this.value === null;
   }
 }
