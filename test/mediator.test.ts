@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import type { IRequest, IRequestHandler } from '../src/patterns/mediator';
-import { Mediator } from '../src/patterns/mediator';
+import type { IRequest, IRequestHandler } from '../src/patterns';
+import { Mediator } from '../src/patterns';
 
 import type {
    User , FetchUserCommand, GreetCommand, LogCommand

@@ -1,2 +1,3 @@
-// Export domain entities, interfaces and common utilities
-export * from "./patterns/result";
+// Export all pattenrs
+
+export * from "./patterns";
