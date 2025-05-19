@@ -1,5 +1,5 @@
 /**
- * Interface for events that can be observed
+ * Interface for events that can be emitted
  */
 export interface Event {
   type: string;
@@ -8,20 +8,20 @@ export interface Event {
 /**
  * Interface for observer objects that want to be notified of specific events
  */
-export interface Observer<T extends Event> {
+export interface EventObserver<T extends Event> {
   update(event: T): void;
 }
 
 /**
- * Subject that maintains a list of observers and notifies them of events
+ * EventEmitter that maintains a list of observers and notifies them of events
  */
 export class EventEmitter<T extends Event> {
-  private observers: Map<string, Observer<T>[]> = new Map();
+  private observers: Map<string, EventObserver<T>[]> = new Map();
 
   /**
    * Subscribe to events of a specific type
    */
-  subscribe(eventType: string, observer: Observer<T>): void {
+  subscribe(eventType: string, observer: EventObserver<T>): void {
     const observers = this.observers.get(eventType) || [];
     if (!observers.includes(observer)) {
       observers.push(observer);
@@ -32,7 +32,7 @@ export class EventEmitter<T extends Event> {
   /**
    * Unsubscribe from events of a specific type
    */
-  unsubscribe(eventType: string, observer: Observer<T>): void {
+  unsubscribe(eventType: string, observer: EventObserver<T>): void {
     const observers = this.observers.get(eventType);
     if (!observers) return;
     
