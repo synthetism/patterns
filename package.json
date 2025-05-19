@@ -18,22 +18,16 @@
     "clean": "rm -rf dist",
     "coverage": "vitest run --coverage",
     "lint": "biome lint ./examples ./src  ",
-    "format": "biome format --write ./src",
+    "format": "biome format --write  ./examples ./src",
     "prepublishOnly": "npm run lint && npm run build",
     "publish:dig": "npm publish --registry https://registry.dig.run",
     "unpublish:dig": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
     "publish:local": "npm publish --registry https://dig.test:4873",
-    "unpublish:local": "npm unpublish --registry https://dig.test:4873  --force"
+    "unpublish:local": "npm unpublish @synet/patterns --registry https://dig.test:4873  --force"
   },
-  "keywords": [
-    "Synet",
-    "Synet AI-to-AI network",
-    "Synthetism",
-    "Synthetic Minds",
-    "Patterns",
-    "Pattern Recognition"
-  ],
-  "license": "MIT",
+  "dependencies": {
+    "uuid": "^11.1.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.15.17",
@@ -45,9 +39,15 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+   "keywords": [
+    "Synet",
+    "Synet AI-to-AI network",
+    "Synthetism",
+    "Synthetic Minds",
+    "Patterns",
+    "Pattern Recognition"
+  ],
   "author": "0en",
   "homepage": "https://0en.xyz",
-  "dependencies": {
-    "uuid": "^11.1.0"
-  }
+  "license": "MIT"
 }

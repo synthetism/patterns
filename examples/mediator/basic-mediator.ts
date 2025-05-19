@@ -63,6 +63,8 @@ export class FetchUserHandler implements IRequestHandler<FetchUserCommand, User>
  * This sample demonstrates how to use the mediator pattern
  * to decouple components in your application.
  */
+
+/* 
 export function basicMediatorExample(): void {
   
    // This is example code - don't actually run this, just for documentation
@@ -109,3 +111,5 @@ export function basicMediatorExample(): void {
   runExample();
   
 }
+
+*/
