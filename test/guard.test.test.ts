@@ -123,11 +123,11 @@ describe('Guard Pattern', () => {
           '123@domain-name.org'
         ];
         
-        validEmails.forEach(email => {
+        for (const email of validEmails) {
           const result = Guard.String.email(email, 'email');
           expect(result.isSuccess).toBe(true);
           expect(result.value).toBe(email);
-        });
+        }
       });
       
       it('should fail for invalid email addresses', () => {
@@ -140,11 +140,11 @@ describe('Guard Pattern', () => {
           'spaces in@email.com'
         ];
         
-        invalidEmails.forEach(email => {
+        for (const email of invalidEmails) {
           const result = Guard.String.email(email, 'email');
           expect(result.isFailure).toBe(true);
           expect(result.errorMessage).toBe('email must be a valid email address');
-        });
+        }
       });
     });
     

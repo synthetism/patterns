@@ -1,6 +1,6 @@
 /**
  * Base specification pattern implementation.
- * 
+ *
  * Specifications encapsulate query logic, making it reusable and composable.
  * They represent a predicate that determines if an object satisfies some criteria.
  */
@@ -38,13 +38,15 @@ export abstract class Specification<T> {
 class AndSpecification<T> extends Specification<T> {
   constructor(
     private left: Specification<T>,
-    private right: Specification<T>
+    private right: Specification<T>,
   ) {
     super();
   }
 
   isSatisfiedBy(candidate: T): boolean {
-    return this.left.isSatisfiedBy(candidate) && this.right.isSatisfiedBy(candidate);
+    return (
+      this.left.isSatisfiedBy(candidate) && this.right.isSatisfiedBy(candidate)
+    );
   }
 }
 
@@ -54,13 +56,15 @@ class AndSpecification<T> extends Specification<T> {
 class OrSpecification<T> extends Specification<T> {
   constructor(
     private left: Specification<T>,
-    private right: Specification<T>
+    private right: Specification<T>,
   ) {
     super();
   }
 
   isSatisfiedBy(candidate: T): boolean {
-    return this.left.isSatisfiedBy(candidate) || this.right.isSatisfiedBy(candidate);
+    return (
+      this.left.isSatisfiedBy(candidate) || this.right.isSatisfiedBy(candidate)
+    );
   }
 }
 
