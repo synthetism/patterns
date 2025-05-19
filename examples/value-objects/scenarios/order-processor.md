@@ -1,8 +1,13 @@
-import { Result } from '../../../src/patterns';
-import { ResultExtensions } from '../../../src/extensions/result-extensions';
+
+# Order Processor example
+
+Here we take full advantage of Value Objects coupled with UniqueId. First we create a unique `orderId` using Value Object OrderId, processing multiple checks and additional logic needed for Order creation, then create Order using Value Object, where we do additional checks that are relevant to the Order only logic, separating concerns.
+
+```javascript
+
+import { Result, ResultExtensions } from '@synet/patterns';
 import { OrderId } from '../orderId';
 import { Order } from '../order';
-
 
 interface PaymentResult {
     transactionId: string;
@@ -31,7 +36,9 @@ export class OrderProcessor {
     }  
 
     processOrder(orderId: string): Result<Order> {
-    // Validate order ID
+        
+    # Create unique order id 
+
     const orderIdResult = OrderId.create(orderId);
     if (orderIdResult.isFailure) {
         return ResultExtensions.mapError<OrderId, Order>(orderIdResult);
@@ -65,4 +72,9 @@ export class OrderProcessor {
 }
 }
 
+/* 
+
 export const orderProcessor = new OrderProcessor(new orderRepository());
+
+*/
+```

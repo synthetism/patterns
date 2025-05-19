@@ -31,6 +31,7 @@ export class Order extends ValueObject<{
     status: 'PENDING' | 'COMPLETED' | 'FAILED';
     completedAt?: Date;
   }): Result<Order> {
+    
     // Validate all inputs using Guard pattern
     
     const paymentIdResult = Guard.String.nonEmpty(props.paymentId, 'paymentId');
