@@ -1,7 +1,8 @@
 import { Result, ValueObject } from '../../src/patterns';
 import { Guard } from '../../src/patterns/guard';
-import { OrderId } from './orderId';
 import { ResultExtensions } from '../../src/extensions/result-extensions';
+import type { OrderId } from './orderId';
+
 /**
  * Represents a confirmation of a completed order.
  * This is immutable and validates all inputs during creation.

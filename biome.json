@@ -7,25 +7,27 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": ["**/guard.ts"]
+	
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "space"
+		"indentStyle": "tab"
 	},
 	"organizeImports": {
 		"enabled": true
 	},
+
 	"linter": {
-		"enabled": false,
+		"enabled": true,
 		"rules": {
 			"recommended": true,
 			"complexity": {
       			  "noStaticOnlyClass": "off"
      		 }
-
-		}
+		}	
 	},
+	
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
