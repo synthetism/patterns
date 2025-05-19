@@ -1,9 +1,9 @@
 /**
  * Represents a request to be handled by the mediator
- * 
+ *
  * Docymentation:
  * @see /docs/mediator.md for detailed documentation and examples
- * 
+ *
  * Examples:
  * @see /examples/mediator.ts for usage examples
  */
