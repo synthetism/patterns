@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Guard } from '../src/patterns/guard';
+import { Guard } from '../src/patterns';
 
 describe('Guard Pattern', () => {
   describe('Common Guards', () => {

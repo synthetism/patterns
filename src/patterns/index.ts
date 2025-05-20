@@ -6,4 +6,4 @@ export * from "./unique-id";
 export * from "./mediator";
 export * from "./specification";
 export * from "./observer";
-export * from "./observer";
+export * from "./event-emitter";

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { UniqueId  } from '../src/patterns/unique-id';
+import { UniqueId  } from '../src/patterns';
 import { UserId }   from '../examples/value-objects/userId';
 import { ProductId } from '../examples/value-objects/productId';
 import { OrderId } from '../examples/value-objects/orderId';
