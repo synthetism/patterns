@@ -22,8 +22,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "publish:dig": "npm publish --registry https://registry.dig.run",
     "unpublish:dig": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
-    "publish:local": "npm publish --registry https://dig.test:4873",
-    "unpublish:local": "npm unpublish @synet/patterns --registry https://dig.test:4873  --force"
+    "dig":" npm run unpublish:dig && npm run publish:dig"
   },
   "dependencies": {
     "uuid": "^11.1.0"
