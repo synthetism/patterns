@@ -1,6 +1,6 @@
 {
   "name": "@synet/patterns",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Pattern Recognition. Code is just a series of altered patterns. The programmer creates the pattern and makes us anticipate a resolution... then holds back. Makes you wait for it. There's patterns in everything and everyone. ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "publish:dig": "npm publish --registry https://registry.dig.run",
     "unpublish:dig": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
-    "dig":" npm run unpublish:dig && npm run publish:dig"
+    "dig": " npm run unpublish:dig && npm run publish:dig"
   },
   "dependencies": {
     "uuid": "^11.1.0"
