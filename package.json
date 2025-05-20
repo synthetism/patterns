@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/synthetism/synet/packages/patterns.git"
+    "url": "https://github.com/anton-ecom/pattens.git"
   },
   "scripts": {
     "build": "tsc",
@@ -19,7 +19,7 @@
     "coverage": "vitest run --coverage",
     "lint": "biome lint ./examples ./src  ",
     "format": "biome format --write  ./examples ./src",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run clean && npm run lint && npm run build",
     "publish:dig": "npm publish --registry https://registry.dig.run",
     "unpublish:dig": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
     "dig": " npm run unpublish:dig && npm run publish:dig"
