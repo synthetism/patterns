@@ -4,12 +4,12 @@ import { Mediator } from '../src/patterns';
 
 import type {
    User , FetchUserCommand, GreetCommand, LogCommand
-} from '../examples/mediator/basic-mediator';
+} from './examples/mediator/basic-mediator';
 
 
 import { 
    GreetHandler,FetchUserHandler
-} from '../examples/mediator/basic-mediator';
+} from './examples/mediator/basic-mediator';
 
 // Create a test-specific logger mock implementation
 class TestLogHandler implements IRequestHandler<LogCommand, void> {

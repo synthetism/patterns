@@ -6,3 +6,4 @@ export * from "./patterns/guard";
 export * from "./patterns/unique-id";
 export * from "./patterns/mediator";
 export * from "./patterns/specification";
+export * from "./extensions/result-extensions";
