@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { Email } from '../examples/value-objects/email';
-import { Post } from '../examples/value-objects/post';
+import { Email } from './examples/value-objects/email';
+import { Post } from './examples/value-objects/post';
 
 
 describe('Value Object Pattern', () => {

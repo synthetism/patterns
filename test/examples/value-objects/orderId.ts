@@ -1,5 +1,5 @@
-import { Result } from "../../src/patterns/result";
-import { UniqueId } from "../../src/patterns/unique-id";
+import { Result } from "../../../src/patterns/result";
+import { UniqueId } from "../../../src/patterns/unique-id";
 
 /**
  * Order ID - A specialized UniqueId for Order entities.

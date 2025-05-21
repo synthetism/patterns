@@ -1,5 +1,5 @@
-import { Result, UniqueId } from "../../src/patterns";
-
+import { Result } from "../../../src/patterns/result";
+import { UniqueId } from "../../../src/patterns/unique-id";
 /**
  * User ID - A specialized UniqueId for User entities.
  *

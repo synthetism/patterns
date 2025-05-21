@@ -1,5 +1,6 @@
-import { Result, ValueObject } from "../../src/patterns";
-import type { Mapper } from "../../src/patterns/mapper";
+import { Result } from "../../../src/patterns/result";
+import { ValueObject } from "../../../src/patterns/value-object";
+import type { Mapper } from "../../../src/patterns/mapper";
 
 export interface PostModel {
 	id?: string;

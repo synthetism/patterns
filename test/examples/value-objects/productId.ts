@@ -1,5 +1,5 @@
-import { Result } from "../../src/patterns/result";
-import { ValueObject } from "../../src/patterns/value-object";
+import { Result } from "../../../src/patterns/result";
+import { ValueObject } from "../../../src/patterns/value-object";
 
 /**
  * Product ID with a specific format: PRD-XXXXXX

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { EventEmitter, EventObserver } from '../src/patterns/event-emitter';
-import type { Event } from '../src/patterns';
+import type { Event } from '../src/patterns/event-emitter';
 
 interface TestPayload { 
     username?: string;

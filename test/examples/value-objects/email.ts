@@ -1,4 +1,5 @@
-import { Result, ValueObject } from "../../src/patterns";
+import { Result } from "../../../src/patterns/result";
+import {  ValueObject } from "../../../src/patterns/value-object";
 
 interface EmailProps {
 	value: string;

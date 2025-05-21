@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Post, PostMapper } from '../examples/value-objects/post';
+import { Post, PostMapper } from './examples/value-objects/post';
 
 
   describe('Post and Mapper Example', () => {

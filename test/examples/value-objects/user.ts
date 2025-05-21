@@ -1,5 +1,6 @@
-import { Result, ValueObject } from "../../src/patterns";
-import { ResultExtensions } from "../../src/extensions/result-extensions";
+import { Result } from "../../../src/patterns/result";
+import { ValueObject } from "../../../src/patterns/value-object";
+import { ResultExtensions } from "../../../src/extensions/result-extensions";
 import { Email } from "./email";
 import { UserId } from "./userId";
 export class User {

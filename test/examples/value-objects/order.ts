@@ -1,6 +1,7 @@
-import { Result, ValueObject } from "../../src/patterns";
-import { Guard } from "../../src/patterns/guard";
-import { ResultExtensions } from "../../src/extensions/result-extensions";
+import { Result } from "../../../src/patterns/result";
+import { ValueObject } from "../../../src/patterns/value-object";
+import { Guard } from "../../../src/patterns/guard";
+import { ResultExtensions } from "../../../src/extensions/result-extensions";
 import type { OrderId } from "./orderId";
 
 /**
