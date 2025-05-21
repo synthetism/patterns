@@ -24,7 +24,7 @@
     "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
     "lint": "biome lint ./src",
-    "format": "biome format --write  ./examples ./src",
+    "format": "biome format --write ./src ./test",
     "prepublishOnly": "npm run clean && npm run lint && npm run build",
     "dig:publish": "npm publish --registry https://registry.dig.run",
     "dig:unpublish": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
