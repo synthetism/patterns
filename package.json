@@ -1,6 +1,6 @@
 {
   "name": "@synet/patterns",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Pattern Recognition. Code is just a series of altered patterns. The programmer creates the pattern and makes us anticipate a resolution... then holds back. Makes you wait for it. There's patterns in everything and everyone. ",
   "type": "module",
   "main": "dist/index.js",
