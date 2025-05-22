@@ -1,5 +1,5 @@
-import type { RealtimeChannel } from "./realtime-channel";
-import type { RealtimeEvent } from "../common/realtime-event";
+import type { RealtimeChannel } from "./realtime-channel.js";
+import type { RealtimeEvent } from "../common/realtime-event.js";
 
 /**
  * Options for configuring a realtime provider

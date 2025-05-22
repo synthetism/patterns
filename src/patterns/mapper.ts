@@ -1,4 +1,4 @@
-import type { Result } from "./result";
+import type { Result } from "./result.js";
 
 /**
  * Mapper pattern for transforming between domain and infrastructure models.

@@ -1,4 +1,4 @@
-import type { Event } from "../../patterns/event-emitter";
+import type { Event } from "../../patterns/event-emitter.js";
 
 /**
  * Extended event interface with additional fields required for realtime communication

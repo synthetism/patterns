@@ -1,4 +1,4 @@
-import type { RealtimeEvent } from "../common/realtime-event";
+import type { RealtimeEvent } from "../common/realtime-event.js";
 
 export type EventSelector =
 	| string

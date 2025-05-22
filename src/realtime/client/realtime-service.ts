@@ -1,4 +1,4 @@
-import type { EventEmitter, Event } from "../../patterns/event-emitter";
+import type { EventEmitter, Event } from "../../patterns/event-emitter.js";
 
 /**
  * Generic RealtimeService interface
