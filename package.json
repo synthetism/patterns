@@ -8,7 +8,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    }
+    },
+    "./realtime": "./dist/realtime/index.js",
+    "./realtime/client": "./dist/realtime/client/index.js",
+    "./realtime/common": "./dist/realtime/common/index.js"
   },
   "files": [
     "dist"

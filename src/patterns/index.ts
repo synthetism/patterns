@@ -7,5 +7,5 @@ export * from "./mediator";
 export * from "./specification";
 export * from "./observer";
 export * from "./event-emitter";
-export * from "./realtime-service";
+export * from "../realtime/client/realtime-service";
 
