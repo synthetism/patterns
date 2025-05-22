@@ -8,4 +8,3 @@ export * from "./specification";
 export * from "./observer";
 export * from "./event-emitter";
 export * from "../realtime/client/realtime-service";
-
