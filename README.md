@@ -37,7 +37,7 @@ Each pattern has its own documentation and examples.blob/main/docs: [`/blob/main
 - **Guard** Type-safe validation helpers for strings, numbers, arrays, objects, and dates [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/guard.md)
 - **UniqueId** Type-safe, immutable unique identifiers (UUID v4 by default) [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/unique-id.md)
 - **Mediator** Decouple request/response logic with a central dispatcher [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/mediator.md)
-- **Specification** Encapsulate and compose business rules and queries [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/specification.md)
+- **Specification** Encapsulate and compose business rules and queries [TBD]
 - **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/anton-ecom/patterns/blob/main/docs/event-emitter.md)
 
 ## Realtime Patterns
