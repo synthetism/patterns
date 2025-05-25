@@ -47,8 +47,6 @@ channel.on("update", (event) => {
 });
 ```
 
-See [websocket-provider.ts](https://github.com/anton-ecom/patterns/tree/main/examples/realtime/websocket-provider.ts) and [gun-provider.ts](https://github.com/anton-ecom/patterns/tree/main/examples/realtime/gun-provider.ts) for real implementations.
-
-```
+See [websocket-provider.ts](https://github.com/anton-ecom/patterns/blob/main/docs/examples/realtime/websocket-provider.ts) and [gun-provider.ts](https://github.com/anton-ecom/patterns/blob/main/examples/realtime/gun-provider.ts) for real implementations.
 
 ```

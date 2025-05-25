@@ -35,6 +35,6 @@ emitter.subscribe("entry.insert", {
 - `getEventEmitter()`: Get the event emitter for subscribing to events.
 - `cleanup()`: Unsubscribe from all channels.
 
-See [supabase-realtime-service.ts](https://github.com/anton-ecom/patterns/tree/main/examples/realtime/supabase-realtime-service.ts) for a full example.
+See [supabase-realtime-service.ts](https://github.com/anton-ecom/patterns/blob/main/docs/examples/realtime/supabase-realtime-service.ts) for a full example.
 
 ```
