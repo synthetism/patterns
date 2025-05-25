@@ -29,7 +29,7 @@ I use these patterns myself, and I maintain them with care.
 
 ## Base Patterns
 
-Each pattern has its own documentation and examples.blob/main/docs: [`/blob/main/docs/<pattern>.md`]
+Each pattern has its own documentation and examples. in [/blob/main/docs](https://github.com/anton-ecom/patterns/blob/main/docs/)
 
 - **Result** Represent the outcome of operations that might fail, with a simple, type-safe API [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/result.md)
 - **Value Object** Immutable objects defined by their property values, not identity [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/value-object.md)
