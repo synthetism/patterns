@@ -5,7 +5,7 @@
 A consumer-facing abstraction for subscribing to realtime events, regardless of the underlying provider (Supabase, WebSocket, GUN, etc).
 See [realtime-service.md](https://github.com/anton-ecom/patterns/tree/main/docs/realtime/realtime-service.md) for details and examples.
 
-### [Realtime Provider &amp; Channel]
+### Realtime Provider &amp; Channel
 
 Low-level abstractions for implementing realtime transports and channels following Supabase Realtime implementation, but you can plug any service this way and connect it to [Event Emitter](https://github.com/anton-ecom/patterns/tree/main/docs/event-emitter.md) pattern.
 
@@ -15,7 +15,7 @@ See  [realtime-provider-channel.md](https://github.com/anton-ecom/patterns/tree/
 
 ### Roadmap:
 
-Realtime Server and Realtime Publisher  - Server side implementations of the same pattern. 
+Realtime Server and Realtime Publisher  - Server side implementations of the same pattern.
 
 ## Contributing
 
