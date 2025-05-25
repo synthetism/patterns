@@ -1,18 +1,28 @@
 {
   "name": "@synet/patterns",
-  "version": "3.0.0",
+  "version": "2.0.1",
   "description": "Pattern Recognition. Code is just a series of altered patterns. The programmer creates the pattern and makes us anticipate a resolution... then holds back. Makes you wait for it. There's patterns in everything and everyone. ",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "commonjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./realtime": "./dist/realtime/index.js",
-    "./realtime/client": "./dist/realtime/client/index.js",
-    "./realtime/common": "./dist/realtime/common/index.js"
+    "./realtime": {
+      "require": "./dist/realtime/index.js",
+      "default": "./dist/realtime/index.js"
+    },
+    "./realtime/client": {
+      "require": "./dist/realtime/client/index.js",
+      "default": "./dist/realtime/client/index.js"
+    },
+    "./realtime/common": {
+      "require": "./dist/realtime/common/index.js",
+      "default": "./dist/realtime/common/index.js"
+    }
   },
   "files": [
     "dist"
@@ -31,7 +41,7 @@
     "format": "biome format --write ./src ./test",
     "prepublishOnly": "npm run clean && npm run lint && npm run build",
     "dig:publish": "npm publish --registry https://registry.dig.run",
-    "dig:unpublish": "npm unpublish @synet/patterns --registry https://registry.dig.run  --force",
+    "dig:unpublish": "npm unpublish @synet/patterns@2.0.1 --registry https://registry.dig.run  --force",
     "dig": "npm run dig:unpublish && npm run dig:publish"
   },
   "dependencies": {

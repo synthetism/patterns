@@ -1,4 +1,4 @@
-import { Result } from "../patterns/result.js";
+import { Result } from "../patterns/result";
 
 /**
  * Extensions for the Result pattern following the Open/Closed Principle.

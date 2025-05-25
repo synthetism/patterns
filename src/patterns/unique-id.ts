@@ -1,6 +1,6 @@
-import { Result } from "./result.js";
+import { Result } from "./result";
 import { v4 as uuidv4, validate as isUuid } from "uuid";
-import { ValueObject } from "./value-object.js";
+import { ValueObject } from "./value-object";
 
 /**
  * Represents a unique identifier.

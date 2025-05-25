@@ -1,4 +1,4 @@
-import { Result } from "./result.js";
+import { Result } from "./result";
 
 /**
  * Guard provides type-specific validation methods organized by data type.
