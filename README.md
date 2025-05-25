@@ -46,9 +46,7 @@ Unified abstractions for realtime communication (Supabase, WebSocket, GUN, etc).
 
 #### Client Side
 
-[Realtime Service](https://github.com/anton-ecom/patterns/docs/realtime/realtime-service.md) - Consumer pattern
-
-[Realtime Provider &amp; Channel](https://github.com/anton-ecom/patterns/docs/realtime/realtime-provider-channel.md) - Patterns for implementing provider and channel for client consumption with examples.
+[Realtime Service](https://github.com/anton-ecom/patterns/docs/realtime/realtime-service.md) - Consumer pattern [Realtime Provider &amp; Channel](https://github.com/anton-ecom/patterns/docs/realtime/realtime-provider-channel.md) - Patterns for implementing provider and channel for client consumption with examples.
 
 ---
 
