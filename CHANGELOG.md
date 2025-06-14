@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file.
 
 Most patterns are highly stable, no changes will be made to existing methods, only extended, but I will adhere to adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) just in case. You can safely upgrade, but as always, RTFM (read changelog for major releases).
 
+## [2.0.3] - 2025-06-14
+
+### Added
+
+- Command Bus pattern
+- Result combine method
+
+# Changed
+
+- Improved documentation
+- Better tests
+- 
+
+## [2.0.1] - 2025-05-28
+
+**Major release**
+
+### Added
+
+Experimential patterns - no part of the build, up for discussion
+
+- AIOperator
+- AdaptiveResilience
+- PropagatedContext
+- Intention
+- Progressive
+- SemanticGateways
+
+Not for production.
+
+### Changed
+
+- Improved tests
+- Refactored
+- Streamlined based on feedback (nothing broken) 
+
+
 ## [1.1.7] - 2025-05-21
 
 ### Added

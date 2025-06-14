@@ -1,23 +1,20 @@
 # @synet/patterns
 
-**Pattern Recognition.**
-
-Code is just a series of altered patterns.
-The programmer creates the pattern and makes us anticipate a resolution...
-then holds back.
-Makes you wait for it.
-
-> There's patterns in everything and everyone.
-
 # Patterns
 
 Welcome! 👋
 
-I’m 0en, and this is my personal collection of software patterns. Battle-tested, refined, and unified across all my projects and Synet.
+I’m 0en, and this is my collection of software patterns. Battle-tested, refined, and unified across hundreds of my projects and Synet network protocol.
+
+> Music is just a series of altered patterns.
+> The musician creates the pattern and makes us anticipate a resolution...
+> then holds back.
+> Makes you wait for it.
+> There's patterns in everything and everyone.
 
 **Why?**
 
-We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested implementation.
+We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle(and heisen)bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested interface.
 
 **So I built Patterns.**
 
@@ -29,7 +26,7 @@ I use these patterns myself, and I maintain them with care.
 
 ## Base Patterns
 
-Each pattern has its own documentation and examples. in [/blob/main/docs](https://github.com/anton-ecom/patterns/blob/main/docs/)
+Each pattern has its own documentation and examples in [Docs](https://github.com/anton-ecom/patterns/blob/main/docs/)
 
 - **Result** Represent the outcome of operations that might fail, with a simple, type-safe API [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/result.md)
 - **Value Object** Immutable objects defined by their property values, not identity [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/value-object.md)
@@ -39,6 +36,7 @@ Each pattern has its own documentation and examples. in [/blob/main/docs](https:
 - **Mediator** Decouple request/response logic with a central dispatcher [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/mediator.md)
 - **Specification** Encapsulate and compose business rules and queries [TBD]
 - **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/anton-ecom/patterns/blob/main/docs/event-emitter.md)
+- **Command Bus** - Advanced version of Mediator made for commands. Powered by intuitive middlewares, logging and integrated EventEmitter. It's a gift. [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/command-bus.md)
 
 ## Realtime Patterns
 
