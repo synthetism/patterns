@@ -57,9 +57,9 @@ export class TemperatureDisplay implements Observer<TemperatureData> {
 	private display(): void {
 		if (!this.lastTemperature) return;
 
-		console.log(
+		/* console.log(
 			`[${this.name}] Temperature: ${this.lastTemperature.value}°${this.lastTemperature.unit.charAt(0).toUpperCase()} at ${this.lastTemperature.timestamp.toLocaleTimeString()}`,
-		);
+		); */
 	}
 
 	getLastTemperature(): TemperatureData | null {

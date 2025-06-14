@@ -1,7 +1,7 @@
 {
   "name": "@synet/patterns",
-  "version": "2.0.2",
-  "description": "Robust, battle tested Node.js library for stable patterns use in Synet packages",
+  "version": "2.0.3-dev.0",
+  "description": "Robust, battle-tested collection of stable patterns used in Synet packages",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "commonjs",
@@ -29,14 +29,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anton-ecom/patterns.git"
+    "url": "git+https://github.com/synthetism/patterns.git"
   },
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
     "dev:test": "vitest",
     "clean": "rimraf dist",
-    "coverage": "vitest run --coverage",
+    "coverage": "vitest --coverage",
     "lint": "biome lint ./src",
     "format": "biome format --write ./src ./test",
     "prepublishOnly": "npm run clean && npm run lint && npm run build",

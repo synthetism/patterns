@@ -4,22 +4,8 @@ import { Result } from "./result";
  * Guard provides type-specific validation methods organized by data type.
  *
  * This design improves discoverability and organization of validation logic.
- *
- * @example
- * function createProduct(name: string, price: number, quantity: number) {
- *   // Validate with type-specific guards
- *   const nameResult = Guard.String.nonEmpty(name, 'name');
- *   const priceResult = Guard.Number.positive(price, 'price');
- *   const quantityResult = Guard.Number.min(quantity, 0, 'quantity');
- *
- *   const validationResult = Guard.combine([nameResult, priceResult, quantityResult]);
- *
- *   if (validationResult.isFailure) {
- *     return Result.fail(validationResult.errorMessage);
- *   }
- *
- *   // Proceed with valid data...
- * }
+ * 
+ * 
  */
 
 export class Guard {
@@ -503,4 +489,22 @@ export class Guard {
       return Result.success(date);
     },
   };
-}
+
+
+    /**
+     * Validates that a boolean is true. Non-static 
+     */
+  isTrue(value: boolean, name: string): Result<boolean> {
+      const definedResult = Guard.defined(value, name);
+      if (definedResult.isFailure) {
+        return definedResult;
+      }
+
+      if (value !== true) {
+        return Result.fail(`${name} must be true`);
+      }
+
+      return Result.success(value);
+    }
+ };
+
