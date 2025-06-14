@@ -20,7 +20,7 @@ We all use patterns. I used them everywhere: in products, libraries, and experim
 
 This library unites all my products and libraries under one set of stable, maintained, and carefully crafted patterns.
 I use these patterns myself, and I maintain them with care.
-**Use them!** They’re hihly stable, consistent, and designed to make your codebase better.
+**Use them!** They’re highly stable, consistent, and designed to make your codebase better.
 
 ---
 
@@ -47,6 +47,23 @@ Unified abstractions for realtime communication (Supabase, WebSocket, GUN, etc).
 [Realtime Service](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-service.md) - Consumer pattern [Realtime Provider &amp; Channel](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) - Patterns for implementing provider and channel for client consumption with examples.
 
 ---
+
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run coverage
+
+# Build the package
+npm run build
+```
 
 ## Contributing
 
