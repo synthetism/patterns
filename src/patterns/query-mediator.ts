@@ -41,3 +41,14 @@ export interface QueryMiddleware {
     next: () => Promise<TResult>
   ): Promise<TResult>;
 }
+
+export interface QueryMediator {
+ registerHandler<TQuery extends Query<TResult>, TResult>(
+    queryId: string,
+    handler: QueryHandler<TQuery, TResult>
+  ): void;
+
+  registerMiddleware(middleware: QueryMiddleware): void;
+
+  query<TResult>(query: Query<TResult>): Promise<TResult>;
+}
