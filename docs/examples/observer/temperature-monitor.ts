@@ -1,9 +1,10 @@
-# Temperature Monitor
+
+/** # Temperature Monitor
 
 Example that demonstrates the Observer pattern in action
+**/
 
-```typescript
-import { Subject, Observer } from '../../src/patterns/observer';
+import  { Subject, type Observer } from '@synet/patterns';
 
 /**
  * Temperature data structure
@@ -18,7 +19,7 @@ interface TemperatureData {
  * Temperature sensor that reports temperature changes
  */
 export class TemperatureSensor extends Subject<TemperatureData> {
-  private currentTemperature: number = 0;
+  private currentTemperature: number | 0;
   
   constructor(private unit: 'celsius' | 'fahrenheit' = 'celsius') {
     super();
@@ -102,9 +103,10 @@ export class TemperatureAlert implements Observer<TemperatureData> {
     
     if (fromUnit === 'celsius' && toUnit === 'fahrenheit') {
       return (value * 9/5) + 32;
-    } else {
-      return (value - 32) * 5/9;
-    }
+    } 
+    
+    return (value - 32) * 5/9;
+    
   }
   
   getAlerts(): string[] {
@@ -141,5 +143,5 @@ export function temperatureMonitorDemo(): void {
   // Should only notify display1 and alert
   sensor.setTemperature(33);
 }
-```
+
 

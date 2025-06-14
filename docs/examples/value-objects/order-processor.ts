@@ -1,9 +1,11 @@
 
-# Order Processor example
 
-Here we take full advantage of Value Objects coupled with UniqueId. First we create a unique `orderId` using Value Object OrderId, processing multiple checks and additional logic needed for Order creation, then create Order using Value Object, where we do additional checks that are relevant to the Order only logic, separating concerns.
-
-```javascript
+/**
+ * # Order Processor example
+ * Here we take full advantage of Value Objects coupled with UniqueId.
+ * First we create a unique `orderId` using Value Object OrderId, processing multiple checks and additional logic needed for Order creation.
+ * Then create Order using Value Object, where we do additional checks that are relevant to the Order only logic, separating concerns.
+ */
 
 import { Result, ResultExtensions } from '@synet/patterns';
 import { OrderId } from '../orderId';
