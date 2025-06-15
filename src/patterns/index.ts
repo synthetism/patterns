@@ -10,4 +10,4 @@ export * from "./event-emitter";
 export * from "../realtime/client/realtime-service";
 export * from "./command-bus";
 export * from "./api-response";
-export * from "./query-mediator"
+export * from "./query-mediator";

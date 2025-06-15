@@ -24,7 +24,7 @@ export interface QueryResult<T> {
     executionTime: number;
     cacheKey?: string;
     projectedFields?: string[];
-    source: 'cache' | 'database' | 'api';
+    source: "cache" | "database" | "api";
   };
 }
 
@@ -38,14 +38,14 @@ export interface QueryCache {
 export interface QueryMiddleware {
   execute<TResult>(
     query: Query<TResult>,
-    next: () => Promise<TResult>
+    next: () => Promise<TResult>,
   ): Promise<TResult>;
 }
 
 export interface QueryMediator {
- registerHandler<TQuery extends Query<TResult>, TResult>(
+  registerHandler<TQuery extends Query<TResult>, TResult>(
     queryId: string,
-    handler: QueryHandler<TQuery, TResult>
+    handler: QueryHandler<TQuery, TResult>,
   ): void;
 
   registerMiddleware(middleware: QueryMiddleware): void;

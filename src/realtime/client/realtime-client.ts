@@ -1,6 +1,6 @@
-import type { EventEmitter } from '@synet/patterns';
-import type { RealtimeEvent, Topic } from '../common/realtime-event';
-import type { RealtimeChannel } from './realtime-channel';
+import type { EventEmitter } from "@synet/patterns";
+import type { RealtimeEvent, Topic } from "../common/realtime-event";
+import type { RealtimeChannel } from "./realtime-channel";
 /**
  * CLIENT-SIDE: Subscribe to and emit events to remote topics
  */
@@ -11,7 +11,7 @@ export interface RealtimeClient {
    * @param handler Function to handle incoming events
    * @returns Unsubscribe function
    */
-  subscribe(topic: Topic): RealtimeChannel
+  subscribe(topic: Topic): RealtimeChannel;
 
   /**
    * Unsubscribe from a topic

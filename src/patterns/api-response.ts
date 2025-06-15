@@ -10,7 +10,7 @@ export class ApiResponseError extends Error {
   constructor(
     public statusCode: number,
     message: string,
-    public details?: unknown
+    public details?: unknown,
   ) {
     super(message);
     Error.captureStackTrace(this, this.constructor);

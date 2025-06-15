@@ -1,12 +1,10 @@
 import type { Event } from "@synet/patterns";
 
-
 /**
  * A topic is a named channel for events
  * Examples: "users", "notifications", "system.alerts"
  */
 export type Topic = string;
-
 
 /**
  * Extended event interface with additional fields required for realtime communication

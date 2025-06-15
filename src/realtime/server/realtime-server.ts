@@ -1,4 +1,4 @@
-import type { RealtimeEvent, Topic } from '../common/realtime-event';
+import type { RealtimeEvent, Topic } from "../common/realtime-event";
 
 /**
  * Server statistics
@@ -11,7 +11,6 @@ export interface RealtimeServerStats {
   uptime: number; // milliseconds
   averageLatency?: number; // milliseconds
 }
-
 
 /**
  * Configuration options for RealtimeServer
@@ -76,5 +75,8 @@ export interface RealtimeServer {
   /**
    * Register event listeners for server events
    */
-  on(event: 'client.connected' | 'client.disconnected', handler: (data: any) => void): void;
+  on(
+    event: "client.connected" | "client.disconnected",
+    handler: (data: any) => void,
+  ): void;
 }
