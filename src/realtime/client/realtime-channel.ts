@@ -29,14 +29,14 @@ export interface RealtimeChannel<
    */
   on<T extends TIncoming = TIncoming>(
     selector: EventSelector,
-    handler: (RealtimeEvent: T) => void,
+    handler: (event: T) => void,
   ): () => void;
 
   /**
    * Send an RealtimeEvent to the remote end
    * @param RealtimeEvent RealtimeEvent to send
    */
-  emit(RealtimeEvent: TOutgoing): Promise<void>;
+  emit(event: TOutgoing): Promise<void>;
 
   /**
    * Close the channel and release resources
