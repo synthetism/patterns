@@ -1,10 +1,8 @@
 import type { EventEmitter, Event } from "../../patterns/event-emitter";
 
 /**
- * Generic RealtimeService interface
- *
- * @typeParam E - The event type this service will emit
- * @typeParam C - The channel type this service will manage (e.g., RealtimeChannel)
+ * @deprecated This service is deprecated and will be removed in a future version.
+ * Please use RealtimeClient instead.
  */
 export interface RealtimeService<E extends Event = Event, C = unknown> {
   /**
