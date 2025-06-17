@@ -36,7 +36,7 @@ export interface RealtimeEvent<T = unknown> extends Event {
    */
   metadata?: Record<string, unknown>;
 
-   /**
+  /**
    * Client ID that originated the event (optional)
    * Used for routing and tracking in multi-client environments
    */

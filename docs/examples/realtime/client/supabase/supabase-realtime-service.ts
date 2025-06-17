@@ -1,3 +1,8 @@
+/** 
+ * SupabaseRealtimeService implements the RealtimeService interface 
+ * Works with any RealtimeProvider and RealtimeChannel implementation
+ */
+
 import type {
 	SupabaseClient,
 	RealtimePostgresDeletePayload,

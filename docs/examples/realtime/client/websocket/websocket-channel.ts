@@ -4,9 +4,8 @@ import type {
   RealtimeProviderOptions,
   RealtimeEvent,
   EventSelector,
-} from "@synet/patterns/realtime";
+} from "@synet/patterns/realtime/client";
 import type { WebsocketOptions } from "./websocket-types";
-//import type { RealtimeEvent } from '../../domain/patterns/RealtimeEvent';
 import crypto from "node:crypto"; // Add this import
 /**
  * WebSocket implementation of RealtimeChannel
@@ -109,10 +108,11 @@ export class WebSocketRealtimeChannel<
 
   on<T extends TIn = TIn>(
     selector: EventSelector,
-    handler: (RealtimeEvent: T) => void,
+    handler: (event: T) => void,
   ): () => void {
     let eventType: string;
 
+  
     if (typeof selector === "string") {
       eventType = selector;
     } else if (selector.type && selector.source) {
@@ -131,13 +131,13 @@ export class WebSocketRealtimeChannel<
 
     const handlers = this.eventHandlers.get(eventType);
     if (handlers) {
-      handlers.add(handler as (RealtimeEvent: TIn) => void);
+      handlers.add(handler as (event: TIn) => void);
     }
 
     return () => {
       const handlers = this.eventHandlers.get(eventType);
       if (handlers) {
-        handlers.delete(handler as (RealtimeEvent: TIn) => void);
+        handlers.delete(handler as (event: TIn) => void);
         if (handlers.size === 0) {
           this.eventHandlers.delete(eventType);
         }

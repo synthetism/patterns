@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import type { Event } from "../src/patterns/event-emitter";
-import { EventEmitter } from "../src/patterns/event-emitter";
+import type { Event } from "../../src/patterns/event-emitter";
+import { EventEmitter } from "../../src/patterns/event-emitter";
 
 // Define DB event types
 interface DbEvent extends Event {

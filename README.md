@@ -11,17 +11,24 @@ I’m 0en, and this is my collection of software patterns. Battle-tested, refine
 > then holds back.
 > Makes you wait for it.
 > There's patterns in everything and everyone.
+ 
+## Installation
+
+```bash
+npm install @synet/patterns
+```
 
 **Why?**
 
-We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle(and heisen)bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested interface.
+We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle(and heisen)bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested interface. 
 
 **So I built Patterns.**
 
-This library unites all my products and libraries under one set of stable, maintained, and carefully crafted patterns.
-I use these patterns myself, and I maintain them with care.
-**Use them!** They’re highly stable, consistent, and designed to make your codebase better.
+Other many years in big-tech and enterprise work, I've collected and successfully used many patterns. This library unites all my best patterns and libraries under one set of stable, maintained, and carefully crafted patterns. I use these patterns myself, and I maintain them with care. 
 
+**Use them if you want to live** They’re highly stable, consistent, and designed to make your codebase better. Typesafety will save you a hundred years of your lifetime (or kill you). 
+
+Especially useful, when exposed to AI. It quickly learns the patterns and offer you working consistent solutions our of the box. 
 ---
 
 ## Base Patterns
@@ -38,16 +45,28 @@ Each pattern has its own documentation and examples in [Docs](https://github.com
 - **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/anton-ecom/patterns/blob/main/docs/event-emitter.md)
 - **Command Bus** - Advanced version of Mediator made for commands. Powered by intuitive middlewares, logging and integrated EventEmitter. It's a gift. [Read more](https://github.com/anton-ecom/patterns/blob/main/docs/command-bus.md)
 
-## Realtime Patterns
+## Realtime Communication Patterns
 
-Unified abstractions for realtime communication (Supabase, WebSocket, GUN, etc). [read more](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime.md)
+Unified abstractions for realtime communication (Supabase, WebSocket, NATS, GUN etc). [read more](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime.md). You can plug in any transport in minutes, create adapters and switch between transports without changing events structure. 
 
 #### Client Side
 
-[Realtime Service](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-service.md) - Consumer pattern [Realtime Provider &amp; Channel](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) - Patterns for implementing provider and channel for client consumption with examples.
+[Realtime Client](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-service.md) - Connect any provider, custom (websocket,nats gun) or databases like Supabase/Neon.
+
+[Realtime Service](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-service.md) (Depricated, but working)
+
+[Realtime Provider &amp; Channel](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) - Consumer patterns for implementing provider and channel for client consumption with examples, similar to what Supabase has done in supabase-js to enable Realtime events.
+
+You can find Nats and Websocket, and Gun provider,channel and client  implementations are in the [examples](https://github.com/anton-ecom/patterns/blob/main/docs/examples/realtime/client) 
+
+#### Server Side
+
+[Realtime Server](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-server.md)  is the implemenation of server-side events broadcasting, sharing RealtimeEvent type and methodology.
+
+
+You can find Nats and Websocket server example implementations are in the [examples](https://github.com/anton-ecom/patterns/blob/main/docs/examples/realtime/server) 
 
 ---
-
 
 ## Development
 

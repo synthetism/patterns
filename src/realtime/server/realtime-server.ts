@@ -1,4 +1,4 @@
-import type { RealtimeEvent, Topic } from '../common/realtime-event';
+import type { RealtimeEvent, Topic } from "../common/realtime-event";
 
 // Keep the specific event data types for documentation
 export interface ClientConnectedEventData {
@@ -21,8 +21,10 @@ export interface MessageReceivedEventData {
 }
 
 // Simplified server events with a cleaner approach
-export type ServerEventType = 'client.connected' | 'client.disconnected' | 'message.received';
-
+export type ServerEventType =
+  | "client.connected"
+  | "client.disconnected"
+  | "message.received";
 
 /**
  * Server statistics
@@ -35,9 +37,6 @@ export interface RealtimeServerStats {
   uptime: number; // milliseconds
   averageLatency?: number; // milliseconds
 }
-
-
-
 
 /**
  * Configuration options for RealtimeServer
@@ -102,5 +101,8 @@ export interface RealtimeServer {
   /**
    * Register event listeners for server events
    */
-  on<T extends ServerEventType>(event: T, handler: (data: unknown) => void): void;
+  on<T extends ServerEventType>(
+    event: T,
+    handler: (data: unknown) => void,
+  ): void;
 }
