@@ -40,19 +40,22 @@ Especially useful, when exposed to AI code assistant. It quickly learns the patt
 
 Each pattern has its own documentation and examples in [Docs](https://github.com/synthetism/patterns/blob/main/docs/)
 
-- **Result** Represent the outcome of operations that might fail, with a simple, type-safe API [Read more](https://github.com/synthetism/patterns/blob/main/docs/result.md)
-- **Value Object** Immutable objects defined by their property values, not identity [Read more](https://github.com/synthetism/patterns/blob/main/docs/value-object.md)
-- **Mapper** Transform between domain and infrastructure models, keeping your domain logic clean [Read more](https://github.com/synthetism/patterns/blob/main/docs/mapper.md)
-- **Guard** Type-safe validation helpers for strings, numbers, arrays, objects, and dates [Read more](https://github.com/synthetism/patterns/blob/main/docs/guard.md)
-- **UniqueId** Type-safe, immutable unique identifiers (UUID v4 by default) [Read more](https://github.com/synthetism/patterns/blob/main/docs/unique-id.md)
-- **Mediator** Decouple request/response logic with a central dispatcher [Read more](https://github.com/synthetism/patterns/blob/main/docs/mediator.md)
+- **Result** Represent the outcome of operations that might fail, with a simple, type-safe API [read](https://github.com/synthetism/patterns/blob/main/docs/result.md)
+- **Value Object** Immutable objects defined by their property values, not identity [read](https://github.com/synthetism/patterns/blob/main/docs/value-object.md)
+- **Mapper** Transform between domain and infrastructure models, keeping your domain logic clean [read](https://github.com/synthetism/patterns/blob/main/docs/mapper.md)
+- **Guard** Type-safe validation helpers for strings, numbers, arrays, objects, and dates [read](https://github.com/synthetism/patterns/blob/main/docs/guard.md)
+- **UniqueId** Type-safe, immutable unique identifiers (UUID v4 by default) [read](https://github.com/synthetism/patterns/blob/main/docs/unique-id.md)
+- **Mediator** Decouple request/response logic with a central dispatcher [read](https://github.com/synthetism/patterns/blob/main/docs/mediator.md)
 - **Specification** Encapsulate and compose business rules and queries [TBD]
-- **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Read more](https://github.com/synthetism/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/synthetism/patterns/blob/main/docs/event-emitter.md)
-- **Command Bus** - Advanced version of Mediator made for commands. Powered by intuitive middlewares, logging and integrated EventEmitter. It's a gift. [Read more](https://github.com/synthetism/patterns/blob/main/docs/command-bus.md)
+- **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Observer](https://github.com/synthetism/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/synthetism/patterns/blob/main/docs/event-emitter.md)
+- **Command Bus** - Advanced version of Mediator made for commands. Powered by intuitive middlewares, logging and integrated EventEmitter. It's a gift. [read](https://github.com/synthetism/patterns/blob/main/docs/command-bus.md)
+- **API Response** - Standardized structure for REST API responses with consistent error handling and typed data payloads [read](https://github.com/synthetism/patterns/blob/main/docs/api-response.md)
+-  **Storage** - Abstract data persistence layer with synchronous and asynchronous variants for seamless storage implementation swapping [read](https://github.com/synthetism/patterns/blob/main/docs/storage/storage.md)
+-  **Indexer** - Fast bi-directional mapping system for lookups by multiple identifiers and efficient content indexing  [read](https://github.com/synthetism/patterns/blob/main/docs/storage/indexer.md)
 
 ## Realtime Communication Patterns
 
-Unified abstractions for realtime communication (Supabase, WebSocket, NATS, GUN etc). [read more](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime.md). You can plug in any transport in minutes, create adapters and switch between transports without changing events structure.
+Unified abstractions for realtime communication (Supabase, WebSocket, NATS, GUN etc). [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime.md). You can plug in any transport in minutes, create adapters and switch between transports without changing events structure.
 
 #### Client Side
 
