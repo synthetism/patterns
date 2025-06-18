@@ -1,7 +1,7 @@
-import type { Result } from '../../patterns/result';
+import type { Result } from "../../patterns/result";
 /**
  * Interface for a generic indexer
-*/
+ */
 
 export interface IIndexer<T> {
   exists(): Promise<Result<boolean>>;

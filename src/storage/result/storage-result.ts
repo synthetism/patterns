@@ -1,4 +1,4 @@
-import type { Result } from '../../patterns/result';
+import type { Result } from "../../patterns/result";
 /**
  * Asynchronous Storage with Result wrapper
  * @template T - The data type being stored
@@ -11,4 +11,4 @@ export interface IStorage<T> {
   delete(id: string): Promise<Result<void>>;
   list(): Promise<Result<T[]>>;
   update?(id: string, data: Partial<T>): Promise<Result<T>>;
-} 
+}
