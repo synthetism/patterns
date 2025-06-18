@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 Most patterns are highly stable, no changes will be made to existing methods, only extended, but I will adhere to adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) just in case. You can safely upgrade, but as always, RTFM (read changelog for major releases).
 
+# [2.1.1] - 2025-06-18
+
+### Added
+
+- Storage pattern (promises/result)
+- Indexer pattern (promises/result)
+- Documentation for APIResponse
+- Now RealtimeClient and RealtimeServer have separate importable implementations, check them out [https://github.com/sinthetism/realtime](https://github.com/sinthetism/realtime)
+
 
 ## [2.1.0] - 2025-06-17
 
