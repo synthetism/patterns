@@ -15,18 +15,18 @@ Realtime communication framework that enables event-driven communication between
 
 The Realtime Client provides a seamless way to connect to remote event streams, subscribe to topics of interest, and publish events. It abstracts the underlying transport mechanisms (WebSocket, NATS) while providing a consistent interface for applications.
 
-See [realtime-client.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-client.md) for details and examples.
+See [realtime-client.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md) for details and examples.
 
 ### Realtime Service [Depricated]
 
 A consumer-facing abstraction for subscribing to realtime events, regardless of the underlying provider (Supabase, WebSocket, GUN, etc).
-See [realtime-service.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-service.md) for details and examples.
+See [realtime-service.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-service.md) for details and examples.
 
 ### Realtime Provider &amp; Channel
 
-Low-level abstractions for implementing realtime transports and channels following Supabase Realtime implementation, but you can plug any service this way and connect it to [Event Emitter](https://github.com/anton-ecom/patterns/blob/main/docs/event-emitter.md) pattern.
+Low-level abstractions for implementing realtime transports and channels following Supabase Realtime implementation, but you can plug any service this way and connect it to [Event Emitter](https://github.com/synthetism/patterns/blob/main/docs/event-emitter.md) pattern.
 
-See  [realtime-provider-channel.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) for short intro and working examples.
+See  [realtime-provider-channel.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md) for short intro and working examples.
 
 ---
 

@@ -11,7 +11,7 @@ The Realtime Server handles client connections, manages subscriptions, and broad
                 │
 ┌───────────────▼─────────────┐
 │     RealtimeServer          │   High-level server interface
-│  (WebSocket/NATS Server)    │   (broadcast, client management)
+│  (WebSocket/NATS/GUN).      │   (broadcast, client management)
 └───────────────┬─────────────┘
                 │
 ┌───┬───────────▼───────┬─────┐
@@ -163,7 +163,13 @@ The realtime framework can be configured via environment variables:
 
 Client side:
 
-[realtime-client.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-client.md) 
+[realtime-client.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md) 
 
-[realtime-provider-channel.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) 
+[realtime-provider-channel.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md) 
 
+Implementations:
+
+You can find ready to use implementations in [Github](https://github.com/synthetism/realtime)
+or [npm package](http://npmjs.com/@synet/realtime)
+
+```

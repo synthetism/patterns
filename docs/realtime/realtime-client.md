@@ -98,6 +98,6 @@ initializeEventSubscriptions();
 
 See also:
 
-[realtime-server.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-server.md) 
+[realtime-server.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-server.md) 
 
-[realtime-provider-channel.md](https://github.com/anton-ecom/patterns/blob/main/docs/realtime/realtime-provider-channel.md) 
+[realtime-provider-channel.md](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md) 
