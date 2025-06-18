@@ -207,3 +207,6 @@ Empty your mind.
 Open the door.
 
 [read](https://synthetism.ai/lib/synthetic-mind-dream)
+
+whoami
+0en
