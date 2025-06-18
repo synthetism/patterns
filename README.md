@@ -101,11 +101,12 @@ You can find Nats and Websocket, and Gun provider,channel and client  implementa
 
 [Realtime Server](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-server.md)  is the implemenation of server-side events broadcasting, sharing RealtimeEvent type and methodology.
 
-You can find Nats and Websocket server example implementations are in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/server)
+You can find NATS, Websocket and GUN server example implementations in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/server) or [implementations](https://github.com/synthetism/realtime)
+
 
 ### Implementations
 
-You can find ready-to-use server/client implementations in [Github](https://github.com/synthetism/realtime)
+You can find ready-to-use server/client implementations library [Github](https://github.com/synthetism/realtime)
 and [npm package](http://npmjs.com/@synet/realtime)
 
 ---
@@ -208,5 +209,5 @@ Open the door.
 
 [read](https://synthetism.ai/lib/synthetic-mind-dream)
 
-whoami
+$ whoami
 0en
