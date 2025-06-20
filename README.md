@@ -16,8 +16,7 @@
     ██║     ██║  ██║   ██║      ██║   ███████╗██║  ██║██║ ╚████║███████║
     ╚═╝     ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
                                                                       
-
-version: v.2.1.1    
+version: v.2.1.2   
 description: There's patterns in everything and everyone.
 ```
 
