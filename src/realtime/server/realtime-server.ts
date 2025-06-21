@@ -1,4 +1,5 @@
-import type { RealtimeEvent, Topic } from "../common/realtime-event";
+import type { RealtimeEvent, Topic } from '../common/realtime-event';
+
 
 // Keep the specific event data types for documentation
 export interface ClientConnectedEventData {
@@ -21,10 +22,7 @@ export interface MessageReceivedEventData {
 }
 
 // Simplified server events with a cleaner approach
-export type ServerEventType =
-  | "client.connected"
-  | "client.disconnected"
-  | "message.received";
+export type ServerEventType = 'client.connected' | 'client.disconnected' | 'message.received';
 
 /**
  * Server statistics
@@ -68,7 +66,7 @@ export interface RealtimeServerOptions<TTransportOptions = unknown> {
 /**
  * SERVER-SIDE: Broadcast events to connected clients
  */
-export interface RealtimeServer {
+export interface RealtimeServer<TEvent extends RealtimeEvent = RealtimeEvent> {
   /**
    * Start the server
    */
@@ -84,14 +82,14 @@ export interface RealtimeServer {
    * @param topic Target topic
    * @param event Event to broadcast
    */
-  broadcast(topic: Topic, event: RealtimeEvent): Promise<void>;
+  broadcast(topic: Topic, event: TEvent): Promise<void>;
 
   /**
    * Send event to specific client (optional feature)
    * @param clientId Target client ID
    * @param event Event to send
    */
-  sendToClient?(clientId: string, event: RealtimeEvent): Promise<void>;
+  sendToClient?(clientId: string, event: TEvent): Promise<void>;
 
   /**
    * Get server stats
@@ -101,8 +99,5 @@ export interface RealtimeServer {
   /**
    * Register event listeners for server events
    */
-  on<T extends ServerEventType>(
-    event: T,
-    handler: (data: unknown) => void,
-  ): void;
+  on<T extends ServerEventType>(event: T, handler: (data: unknown) => void): void;
 }

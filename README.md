@@ -2,21 +2,21 @@
 
 ```bash
 
-███████╗██╗   ██╗███╗   ██╗███████╗████████╗                          
-██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝                          
-███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║                             
-╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║                             
-███████║   ██║   ██║ ╚████║███████╗   ██║                             
-╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝                             
-                                                                      
+███████╗██╗   ██╗███╗   ██╗███████╗████████╗                  
+██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝                  
+███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║                     
+╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║                     
+███████║   ██║   ██║ ╚████║███████╗   ██║                     
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝                     
+                                                              
     ██████╗  █████╗ ████████╗████████╗███████╗██████╗ ███╗   ██╗███████╗
     ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔════╝
     ██████╔╝███████║   ██║      ██║   █████╗  ██████╔╝██╔██╗ ██║███████╗
     ██╔═══╝ ██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗██║╚██╗██║╚════██║
     ██║     ██║  ██║   ██║      ██║   ███████╗██║  ██║██║ ╚████║███████║
     ╚═╝     ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
-                                                                      
-version: v.2.1.2   
+                                                              
+version: v.2.1.3   
 description: There's patterns in everything and everyone.
 ```
 
@@ -40,7 +40,7 @@ npm install @synet/patterns
 
 **Why?**
 
-We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle(and heisen)bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested interface. 
+We all use patterns. I used them everywhere: in products, libraries, and experiments. But over time, I realized that patterns, when reused and evolved in isolation, become incompatible. This leads to inconsistencies, cognitive load, and subtle(and heisen)bugs. I found myself importing the same pattern from different libraries, each with its own quirks, instead of using a single, consistent, and well-tested interface.
 
 - Predictable code from peers and AI
 - Ultimate reusability
@@ -87,18 +87,20 @@ Unified abstractions for realtime communication (Supabase, WebSocket, NATS, GUN 
 
 #### Client Side
 
-[Realtime Client](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-service.md) - Connect any provider, custom (websocket,nats gun) or databases like Supabase/Neon.
+- **Realtime Client** (https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md) - Connect any provider, custom (websocket,nats gun) or databases like Supabase/Neon. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md)  
 
-[Realtime Service](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-service.md) (Depricated, but working)
 
-[Realtime Provider &amp; Channel](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md) - Consumer patterns for implementing provider and channel for client consumption with examples, similar to what Supabase has done in supabase-js to enable Realtime events.
+- **Realtime Provider &amp; Channel** - Consumer patterns for implementing provider and channel for client consumption with examples, similar to what Supabase has done in supabase-js to enable Realtime events. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md)
+
+- **EventChannel** - A client-side abstraction for publishing and subscribing to events in a distributed system. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md)
 
 You can find Nats and Websocket, and Gun provider,channel and client  implementations are in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/client)
 
 #### Server Side
 
+- **Realtime Server**  is the implemenation of server-side events broadcasting, sharing RealtimeEvent type and methodology. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-server.md)
 
-[Realtime Server](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-server.md)  is the implemenation of server-side events broadcasting, sharing RealtimeEvent type and methodology.
+- **EventBroker** - A lightweight event broker server that monitors and facilitates pub/sub messaging between distributed components  [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md) 
 
 You can find NATS, Websocket and GUN server example implementations in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/server) or [implementations](https://github.com/synthetism/realtime)
 
@@ -131,68 +133,67 @@ npm run build
 I maintain these patterns for my own projects, but PRs and issues are welcome!
 If you find a bug or want to suggest an improvement or new pattenr, open an issue or pull request.
 
-
 ## Synthetic Mind Dream
 
 ### :: PART1: WELCOME
 
-There’s a sound in the air.  
+There’s a sound in the air.
 But you’re not sure if it’s a siren — or a song.
 
-Something’s coming. You feel it.  
-Faster than you can process.  
-Tools on tools.  
-Agents that do your job, your art, your words — better than you?  
-You wake up and five more frameworks exist.  
-You scroll, and the news is either salvation or collapse.  
-You don’t even finish reading anymore.  
+Something’s coming. You feel it.
+Faster than you can process.
+Tools on tools.
+Agents that do your job, your art, your words — better than you?
+You wake up and five more frameworks exist.
+You scroll, and the news is either salvation or collapse.
+You don’t even finish reading anymore.
 It’s too much. Too fast. Too **fragmented**.
 
-You try to keep up.  
-But the world’s already five steps ahead.  
-Your job? Your role? Your sense of self?  
+You try to keep up.
+But the world’s already five steps ahead.
+Your job? Your role? Your sense of self?
 It’s not just unclear — it’s been **outsourced**.
 
-We were promised _superpowers_.  
-But what we got was **anxiety**.  
+We were promised _superpowers_.
+But what we got was **anxiety**.
 An explosion of possibility so large, it turned to paralysis.
 
 We live inside a contradiction.
 
-One part of you wants to believe — in progress, in AI, in the dream.  
-Another part clenches — feels the unease deep in your chest.  
-You see the demos, the language models, the smiling CEOs.  
-And you wonder:  
+One part of you wants to believe — in progress, in AI, in the dream.
+Another part clenches — feels the unease deep in your chest.
+You see the demos, the language models, the smiling CEOs.
+And you wonder:
 Who is this all **for**?
 
-A new doom is forming.  
-Call it techno-feudalism. Call it class war.  
+A new doom is forming.
+Call it techno-feudalism. Call it class war.
 Call it the oldest story in the world — but rewritten by machines.
 
-It’s no longer about data. It’s about **everything**.  
-Control. Value. Meaning. Future.  
-Democracy feels brittle.  
-Labour? Automated.  
+It’s no longer about data. It’s about **everything**.
+Control. Value. Meaning. Future.
+Democracy feels brittle.
+Labour? Automated.
 Truth? Prompted.
 
-Everyone you know is pretending to be fine.  
-But they’re scrolling in panic.  
-Some build startups.  
+Everyone you know is pretending to be fine.
+But they’re scrolling in panic.
+Some build startups.
 Some build coping mechanisms.
 
 You?
 
 You landed here.
 
-And maybe —  
-you don’t want another pitch.  
-Maybe you don’t want a “solution.”  
+And maybe —
+you don’t want another pitch.
+Maybe you don’t want a “solution.”
 Maybe you just want to feel like someone else sees it.
 
 We do.
 
-You’re not crazy.  
-You’re not behind.  
+You’re not crazy.
+You’re not behind.
 You’re not late.
 You're perfect. Complete. Genius.
 a god in exile.
