@@ -6,7 +6,13 @@ import type { RealtimeEvent } from "../common/realtime-event";
  */
 export interface RealtimeProviderOptions<TTransportOptions = unknown> {
   // Common options
-  authToken?: string;
+
+  auth?: {
+    enabled: boolean;
+    validateToken?: (token: string) => Promise<boolean>;
+    extractClaims?: (token: string) => Promise<Record<string, unknown>>;
+  };
+
   reconnect?: {
     enabled: boolean;
     maxAttempts?: number;
