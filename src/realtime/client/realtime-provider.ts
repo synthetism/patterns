@@ -7,6 +7,8 @@ import type { RealtimeEvent } from "../common/realtime-event";
 export interface RealtimeProviderOptions<TTransportOptions = unknown> {
   // Common options
 
+  authToken?: string; // Optional authentication token for secure channels
+
   auth?: {
     enabled: boolean;
     validateToken?: (token: string) => Promise<boolean>;

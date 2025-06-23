@@ -36,7 +36,14 @@ export interface RealtimeChannel<
    * Send an RealtimeEvent to the remote end
    * @param RealtimeEvent RealtimeEvent to send
    */
-  emit(event: TOutgoing): Promise<void>;
+  publish(event: TOutgoing): Promise<void>;
+
+  /**
+   * @deprecated Use `publish` instead
+   * Send an RealtimeEvent to the remote end
+   *  
+   */
+  emit?(event: TOutgoing): Promise<void>;
 
   /**
    * Close the channel and release resources
@@ -47,6 +54,11 @@ export interface RealtimeChannel<
    * Get the channel state
    */
   getState(): ChannelState;
+
+  /**
+   * Get the unique ID of this channel instance
+   */
+  getId?(): string;
 }
 
 /**

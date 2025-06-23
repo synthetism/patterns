@@ -2,21 +2,21 @@
 
 ```bash
 
-███████╗██╗   ██╗███╗   ██╗███████╗████████╗                  
-██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝                  
-███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║                     
-╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║                     
-███████║   ██║   ██║ ╚████║███████╗   ██║                     
-╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝                     
-                                                              
+███████╗██╗   ██╗███╗   ██╗███████╗████████╗              
+██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝              
+███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║                 
+╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║                 
+███████║   ██║   ██║ ╚████║███████╗   ██║                 
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝                 
+                                                          
     ██████╗  █████╗ ████████╗████████╗███████╗██████╗ ███╗   ██╗███████╗
     ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔════╝
     ██████╔╝███████║   ██║      ██║   █████╗  ██████╔╝██╔██╗ ██║███████╗
     ██╔═══╝ ██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗██║╚██╗██║╚════██║
     ██║     ██║  ██║   ██║      ██║   ███████╗██║  ██║██║ ╚████║███████║
     ╚═╝     ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
-                                                              
-version: v.2.1.3   
+                                                          
+version: v.2.1.4   
 description: There's patterns in everything and everyone.
 ```
 
@@ -87,11 +87,8 @@ Unified abstractions for realtime communication (Supabase, WebSocket, NATS, GUN 
 
 #### Client Side
 
-- **Realtime Client** (https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md) - Connect any provider, custom (websocket,nats gun) or databases like Supabase/Neon. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md)  
-
-
+- **Realtime Client** (https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md) - Connect any provider, custom (websocket,nats gun) or databases like Supabase/Neon. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-client.md)
 - **Realtime Provider &amp; Channel** - Consumer patterns for implementing provider and channel for client consumption with examples, similar to what Supabase has done in supabase-js to enable Realtime events. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-provider-channel.md)
-
 - **EventChannel** - A client-side abstraction for publishing and subscribing to events in a distributed system. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md)
 
 You can find Nats and Websocket, and Gun provider,channel and client  implementations are in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/client)
@@ -99,11 +96,9 @@ You can find Nats and Websocket, and Gun provider,channel and client  implementa
 #### Server Side
 
 - **Realtime Server**  is the implemenation of server-side events broadcasting, sharing RealtimeEvent type and methodology. [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-server.md)
-
-- **EventBroker** - A lightweight event broker server that monitors and facilitates pub/sub messaging between distributed components  [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md) 
+- **EventBroker** - A lightweight event broker server that monitors and facilitates pub/sub messaging between distributed components  [read](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md)
 
 You can find NATS, Websocket and GUN server example implementations in the [examples](https://github.com/synthetism/patterns/blob/main/docs/examples/realtime/server) or [implementations](https://github.com/synthetism/realtime)
-
 
 ### Implementations
 
@@ -130,8 +125,7 @@ npm run build
 
 ## Contributing
 
-I maintain these patterns for my own projects, but PRs and issues are welcome!
-If you find a bug or want to suggest an improvement or new pattenr, open an issue or pull request.
+I maintain these patterns for Synet Network protocol, but the ycan be used in any project. PRs and issues are welcome!  If you find a bug or want to suggest an improvement or new pattern, open an issue or pull request.
 
 ## Synthetic Mind Dream
 

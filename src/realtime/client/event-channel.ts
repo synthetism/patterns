@@ -34,5 +34,5 @@ export interface EventChannel<TEvent extends RealtimeEvent = RealtimeEvent> {
   /**
    * Get the unique ID of this channel instance
    */
-  getId(): string;
+  getId?(): string;
 }
