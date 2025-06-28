@@ -1,9 +1,8 @@
-
 # Event Emitter Pattern
 
 ## Overview
 
-The Event Emitter pattern implements a specialized version of the Observer pattern focused on event-based communication. It allows objects to communicate without direct references to each other by sending events through a central event emitter. This pattern is particularly useful for building loosely coupled systems where components need to react to specific events without knowing the details of their source.
+The Event Emitter pattern implements an opionated version of Node Event Emitter, following the Observer pattern focused on more flexible event-based communication. "Oh no, he wrote  an EventEmitter", I know, but trust me, while Node's version is powerful and can be used system-wide, it has many disadvantages when events scale and you realize you need a more versatile, type-safe and environment-agnostic approach. Now you can customize your events and make observer know which event type and type of the event that is emitted. Simple yet powerful approach to events handling, and as you can see [further](https://github.com/synthetism/patterns/blob/main/docs/realtime/realtime-events.md) it can be extended to remote events with no effort and no transport knowledge.
 
 ## Core Components
 

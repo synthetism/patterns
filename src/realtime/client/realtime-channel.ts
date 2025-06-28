@@ -41,7 +41,7 @@ export interface RealtimeChannel<
   /**
    * @deprecated Use `publish` instead
    * Send an RealtimeEvent to the remote end
-   *  
+   *
    */
   emit?(event: TOutgoing): Promise<void>;
 

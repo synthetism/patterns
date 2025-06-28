@@ -1,4 +1,4 @@
-import type { Event } from "@synet/patterns";
+import type { Event } from "../../patterns/event-emitter";
 
 /**
  * A topic is a named channel for events

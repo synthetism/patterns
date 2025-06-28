@@ -2,21 +2,21 @@
 
 ```bash
 
-███████╗██╗   ██╗███╗   ██╗███████╗████████╗              
-██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝              
-███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║                 
-╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║                 
-███████║   ██║   ██║ ╚████║███████╗   ██║                 
-╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝                 
-                                                          
+███████╗██╗   ██╗███╗   ██╗███████╗████████╗        
+██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝        
+███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║           
+╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║           
+███████║   ██║   ██║ ╚████║███████╗   ██║           
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝           
+                                                    
     ██████╗  █████╗ ████████╗████████╗███████╗██████╗ ███╗   ██╗███████╗
     ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔════╝
     ██████╔╝███████║   ██║      ██║   █████╗  ██████╔╝██╔██╗ ██║███████╗
     ██╔═══╝ ██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗██║╚██╗██║╚════██║
     ██║     ██║  ██║   ██║      ██║   ███████╗██║  ██║██║ ╚████║███████║
     ╚═╝     ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
-                                                          
-version: v.2.1.4   
+                                                    
+version: v.2.1.5   
 description: There's patterns in everything and everyone.
 ```
 
@@ -75,11 +75,12 @@ Each pattern has its own documentation and examples in [Docs](https://github.com
 - **UniqueId** Type-safe, immutable unique identifiers (UUID v4 by default) [read](https://github.com/synthetism/patterns/blob/main/docs/unique-id.md)
 - **Mediator** Decouple request/response logic with a central dispatcher [read](https://github.com/synthetism/patterns/blob/main/docs/mediator.md)
 - **Specification** Encapsulate and compose business rules and queries [TBD]
-- **Observer & EventEmitter** Event-driven architecture, decoupling components with observer/subject and event emitter patterns  [Observer](https://github.com/synthetism/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/synthetism/patterns/blob/main/docs/event-emitter.md)
+- **Observer & EventEmitter** Environment agnostic, type-safe and extendable implementation of EventEmitter, decoupling components with observer/subject and event emitter patterns  [Observer](https://github.com/synthetism/patterns/blob/main/docs/observer.md) | [EventEmitter](https://github.com/synthetism/patterns/blob/main/docs/event-emitter.md)
 - **Command Bus** - Advanced version of Mediator made for commands. Powered by intuitive middlewares, logging and integrated EventEmitter. It's a gift. [read](https://github.com/synthetism/patterns/blob/main/docs/command-bus.md)
 - **API Response** - Standardized structure for REST API responses with consistent error handling and typed data payloads [read](https://github.com/synthetism/patterns/blob/main/docs/api-response.md)
 - **Storage** - Abstract data persistence layer with synchronous and asynchronous variants for seamless storage implementation swapping [read](https://github.com/synthetism/patterns/blob/main/docs/storage/storage.md)
 - **Indexer** - Fast bi-directional mapping system for lookups by multiple identifiers and efficient content indexing  [read](https://github.com/synthetism/patterns/blob/main/docs/storage/indexer.md)
+-  **FileSystem** - a consistent filesystem abstraction that enables dependency injection, testing, and observability across your applications.  [read](https://github.com/synthetism/patterns/blob/main/docs/filesystem/README.md)
 
 ## Realtime Communication Patterns
 
