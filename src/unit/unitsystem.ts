@@ -22,21 +22,19 @@ export interface IFileUnit {
 }
 
 
-export class Unit<U extends IUnit> extends ValueObject<U> {
+export class Unit<U extends IUnit = IUnit> extends ValueObject<U> {
 
 
   private constructor(props: U) {
     super(props);
   }
-  public static create(
-    data: string,
-  ): Result<IUnit> {
+  public static create<U>(props: U extends IUnit ? U : IUnit): Result<Unit<U extends IUnit ? U : IUnit>> {
 
-    const unit = new Unit({ data });
+    const unit = new Unit(props);
     return Result.success(unit);
   }
 
-  public static fromJSON(json: string): Result<IUnit> {
+  public static fromJSON<U extends IUnit>(json: string): Result<Unit<U extends IUnit ? U : IUnit>> {
     try {
       const data = JSON.parse(json);
       return Unit.create(data);
@@ -60,25 +58,7 @@ export class Unit<U extends IUnit> extends ValueObject<U> {
 
 }
 
-export class FileUnit extends Unit<IFileUnit> {
 
-  private constructor(props: IFileUnit) {
-    super(props);
-
-  }
-
-  public static create(
-    data: string,
-    format: string,
-  ): Result<FileUnit> {
-    const fileUnit = new FileUnit({ data, format });
-    return Result.success(fileUnit);
-  }
-
-  get format(): string {
-    return this.props.format;
-  }
-}
 /**
  * Interface for file system operations
  * Generic over file type to allow for different file implementations
@@ -101,7 +81,7 @@ export interface UnitOptions {
  * Basic file system implementation
  * The foundation that everything builds on
  */
-export class AbstractUnitSystem implements Partial<IAsyncFileSystem>, IUnitSystem {
+export class FileUnitSystem implements Partial<IAsyncFileSystem>, IUnitSystem {
   private name: string;
 
   constructor(
@@ -110,7 +90,6 @@ export class AbstractUnitSystem implements Partial<IAsyncFileSystem>, IUnitSyste
   ) {
     this.name = options?.name || 'UnitSystem';
   }
-
 
   async readFile(path: string): Promise<string> {
     const file = await this.filesystem.readFile(path);
@@ -128,12 +107,21 @@ export class AbstractUnitSystem implements Partial<IAsyncFileSystem>, IUnitSyste
 
   async writeFile(path: string, data: string): Promise<void> {
 
-    const unit = Unit.create(data);
-    if (unit.isFailure) {
-      throw new Error(`Failed to create unit from data: ${unit.errorMessage}`);
+    const fileUnit = Unit.create<IFileUnit>({
+      data: 'file content',
+      format: 'txt',
+    });
+
+    if (fileUnit.isFailure) {
+      throw new Error(`Failed to create file unit: ${fileUnit.errorMessage}`);
     }
 
-    this.filesystem.writeFile(path, unit.value.toJSON());
+    
+    if (fileUnit.isFailure) {
+      throw new Error(`Failed to create unit from data: ${fileUnit.errorMessage}`);
+    }
+
+    this.filesystem.writeFile(path, fileUnit.value.toJSON());
   }
 
   async deleteFile(path: string): Promise<void> {
