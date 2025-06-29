@@ -1,3 +1,13 @@
+export interface FileStats {
+  isFile(): boolean;
+  isDirectory(): boolean;
+  isSymbolicLink(): boolean;
+  size: number;
+  mtime: Date;
+  ctime: Date;
+  atime: Date;
+  mode: number;
+}
 /**
  * File system abstraction interface
  */
@@ -51,6 +61,12 @@ export interface IAsyncFileSystem {
    * @param mode Permission mode (octal)
    */
   chmod(path: string, mode: number): Promise<void>;
+
+  /** 
+     * Get file statistics, custom type for flexibility
+     * @param path File path
+     */
+  stat?(path: string): Promise<FileStats>;
 
   /**
    * Clear the contents of a directory (optional)

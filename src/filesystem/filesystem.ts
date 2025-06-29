@@ -1,3 +1,14 @@
+
+export interface FileStats {
+  isFile(): boolean;
+  isDirectory(): boolean;
+  isSymbolicLink(): boolean;
+  size: number;
+  mtime: Date;
+  ctime: Date;
+  atime: Date;
+  mode: number;
+}
 /**
  * File system abstraction interface
  */
@@ -51,6 +62,11 @@ export interface IFileSystem {
    */
   chmodSync(path: string, mode: number): void;
 
+  /** 
+   * Get file statistics, custom type for flexibility
+   * @param path File path
+   */
+  statSync?(path: string): FileStats;
   /**
    * Clear the contents of a directory (optional)
    * @param dirPath Directory path
