@@ -83,7 +83,7 @@ export interface IFileUnitSystem {
  * Basic file system implementation
  * The foundation that everything builds on
  */
-export class FileUnitSystem implements IFileUnitSystem {
+export class UnitFileSystem implements IFileUnitSystem {
   private name: string;
 
   constructor(

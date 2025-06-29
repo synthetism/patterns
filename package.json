@@ -1,6 +1,6 @@
 {
   "name": "@synet/patterns",
-  "version": "2.1.6-dev.1",
+  "version": "2.1.6-dev.2",
   "description": "Robust, battle-tested collection of stable patterns used in Synet packages",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -56,7 +56,7 @@
       "require": "./dist/filesystem/promises/index.js",
       "default": "./dist/filesystem/promises/index.js"
     },
-     "./fs": {
+    "./fs": {
       "types": "./dist/filesystem/index.d.ts",
       "require": "./dist/filesystem/index.js",
       "default": "./dist/filesystem/index.js"
