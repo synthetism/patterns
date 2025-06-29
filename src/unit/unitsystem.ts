@@ -1,6 +1,6 @@
 import type { IAsyncFileSystem } from '../filesystem/promises';
-import  { ValueObject } from '../patterns';
-import  { Result } from '../patterns/result';
+import   { Unit, type IUnitOptions } from './unit';
+
 /**
  * The foundational file interface - everything is a file
  * This interface can be extended to create specific file types
@@ -8,50 +8,7 @@ import  { Result } from '../patterns/result';
  * 
  * 
  */
-export interface IUnit {
-  data: string;
-}
 
-export interface UnitProps {
-  data: string;
-}
-
-
-export class Unit<U extends IUnit = IUnit> extends ValueObject<U> {
-
-
-  private constructor(props: U) {
-    super(props);
-  }
-  public static create<U>(props: U extends IUnit ? U : IUnit): Result<Unit<U extends IUnit ? U : IUnit>> {
-
-    const unit = new Unit(props);
-    return Result.success(unit);
-  }
-
-  public static fromJSON<U extends IUnit>(json: string): Result<Unit<U extends IUnit ? U : IUnit>> {
-    try {
-      const data = JSON.parse(json);
-      return Unit.create(data);
-    } catch (error) {
-      
-      return Result.fail(`Invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
-    }
-  }
-
-  public toJSON(): string {
-     try {
-    return JSON.stringify(this.props.data);
-    } catch (error) {
-      throw new Error(`Failed to serialize unit to JSON: ${error instanceof Error ? error.message : String(error)}`);
-    }
-  }
-
-  get data(): string {
-    return this.props.data;
-  }
-
-}
 
 
 export interface IUnitSystem<U> {
@@ -65,13 +22,7 @@ export interface IUnitSystem<U> {
 /**
  * Interface for file system operations
  * Generic over file type to allow for different file implementations
- */
-export interface IFileUnitSystem extends IUnitSystem<IFileUnit> {
-  readFile(path: string): Promise<string>;
-  writeFile(path: string, props: IFileUnit): Promise<void>;
-  deleteFile(path: string): Promise<void>;
-  exists(path: string): Promise<boolean>;
-}
+
 
 
 export interface IUnitOptions {
@@ -90,7 +41,10 @@ export interface IFileUnit {
  * Basic file system implementation
  * The foundation that everything builds on
  */
-export class FileUnitSystem implements IFileUnitSystem {
+
+
+
+export class UnitSystem implements IUnitSystem<Unit> {
   private name: string;
 
   constructor(
@@ -114,11 +68,10 @@ export class FileUnitSystem implements IFileUnitSystem {
     return unit.value.data.toString();
   }
 
-  async writeFile(path: string,  props: IFileUnit): Promise<void> {
+  async writeFile(path: string,  props: Unit): Promise<void> {
 
-    const fileUnit = Unit.create<IFileUnit>({
+    const fileUnit = Unit.create({
       data: props.data,
-      format: props.format,
     });
 
     if (fileUnit.isFailure) {

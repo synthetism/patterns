@@ -1,7 +1,7 @@
 import type { IAsyncFileSystem } from '../filesystem/promises';
 import  { ValueObject } from '../patterns';
 import  { Result } from '../patterns/result';
-import type { IUnit, IUnitOptions, IUnitSystem } from './unitsystem';
+import type { IUnit, IUnitOptions } from './unit';
 /**
  * The foundational file interface - everything is a file
  * This interface can be extended to create specific file types
@@ -69,7 +69,7 @@ export class FileUnit<U extends IFileUnit = IFileUnit> extends ValueObject<U> {
  * Interface for file system operations
  * Generic over file type to allow for different file implementations
  */
-export interface IFileUnitSystem extends IUnitSystem<IFileUnit> {
+export interface IFileUnitSystem {
   readFile(path: string): Promise<string>;
   writeFile(path: string, props: IFileUnit): Promise<void>;
   deleteFile(path: string): Promise<void>;
