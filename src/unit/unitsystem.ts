@@ -16,11 +16,6 @@ export interface UnitProps {
   data: string;
 }
 
-export interface IFileUnit {
-  data: string;
-  format: string;
-}
-
 
 export class Unit<U extends IUnit = IUnit> extends ValueObject<U> {
 
@@ -59,34 +54,48 @@ export class Unit<U extends IUnit = IUnit> extends ValueObject<U> {
 }
 
 
+export interface IUnitSystem<U> {
+
+  readFile(path: string): Promise<string>;
+  writeFile(path: string, props: U): Promise<void>;
+  deleteFile(path: string): Promise<void>;
+  exists(path: string): Promise<boolean>;
+}
+
 /**
  * Interface for file system operations
  * Generic over file type to allow for different file implementations
  */
-export interface IUnitSystem {
+export interface IFileUnitSystem extends IUnitSystem<IFileUnit> {
   readFile(path: string): Promise<string>;
-  writeFile(path: string, data: string): Promise<void>;
+  writeFile(path: string, props: IFileUnit): Promise<void>;
   deleteFile(path: string): Promise<void>;
   exists(path: string): Promise<boolean>;
 }
 
 
-export interface UnitOptions {
+export interface IUnitOptions {
   name?: string
   [x: string]: unknown
 }
 
 
+
+export interface IFileUnit {
+  data: string;
+  format: string;
+}
+
 /**
  * Basic file system implementation
  * The foundation that everything builds on
  */
-export class FileUnitSystem implements Partial<IAsyncFileSystem>, IUnitSystem {
+export class FileUnitSystem implements IFileUnitSystem {
   private name: string;
 
   constructor(
     private filesystem: IAsyncFileSystem,
-    private options?: UnitOptions,
+    private options?: IUnitOptions,
   ) {
     this.name = options?.name || 'UnitSystem';
   }
@@ -102,14 +111,14 @@ export class FileUnitSystem implements Partial<IAsyncFileSystem>, IUnitSystem {
       throw new Error(`Failed to create unit from file: ${unit.errorMessage}`);
     }
 
-    return unit.value.data;
+    return unit.value.data.toString();
   }
 
-  async writeFile(path: string, data: string): Promise<void> {
+  async writeFile(path: string,  props: IFileUnit): Promise<void> {
 
     const fileUnit = Unit.create<IFileUnit>({
-      data: 'file content',
-      format: 'txt',
+      data: props.data,
+      format: props.format,
     });
 
     if (fileUnit.isFailure) {
