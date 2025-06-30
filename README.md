@@ -2,21 +2,21 @@
 
 ```bash
 
-███████╗██╗   ██╗███╗   ██╗███████╗████████╗        
-██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝        
-███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║           
-╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║           
-███████║   ██║   ██║ ╚████║███████╗   ██║           
-╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝           
-                                                    
+███████╗██╗   ██╗███╗   ██╗███████╗████████╗  
+██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝  
+███████╗ ╚████╔╝ ██╔██╗ ██║█████╗     ██║   
+╚════██║  ╚██╔╝  ██║╚██╗██║██╔══╝     ██║   
+███████║   ██║   ██║ ╚████║███████╗   ██║   
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   
+                                        
     ██████╗  █████╗ ████████╗████████╗███████╗██████╗ ███╗   ██╗███████╗
     ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔════╝
     ██████╔╝███████║   ██║      ██║   █████╗  ██████╔╝██╔██╗ ██║███████╗
     ██╔═══╝ ██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗██║╚██╗██║╚════██║
     ██║     ██║  ██║   ██║      ██║   ███████╗██║  ██║██║ ╚████║███████║
     ╚═╝     ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
-                                                    
-version: v.2.1.5   
+                                        
+version: v.2.1.6   
 description: There's patterns in everything and everyone.
 ```
 
@@ -80,7 +80,8 @@ Each pattern has its own documentation and examples in [Docs](https://github.com
 - **API Response** - Standardized structure for REST API responses with consistent error handling and typed data payloads [read](https://github.com/synthetism/patterns/blob/main/docs/api-response.md)
 - **Storage** - Abstract data persistence layer with synchronous and asynchronous variants for seamless storage implementation swapping [read](https://github.com/synthetism/patterns/blob/main/docs/storage/storage.md)
 - **Indexer** - Fast bi-directional mapping system for lookups by multiple identifiers and efficient content indexing  [read](https://github.com/synthetism/patterns/blob/main/docs/storage/indexer.md)
--  **FileSystem** - a consistent filesystem abstraction that enables dependency injection, testing, and observability across your applications.  [read](https://github.com/synthetism/patterns/blob/main/docs/filesystem/README.md)
+- **FileSystem** - a consistent filesystem abstraction that enables dependency injection, testing, and observability across your applications.  [read](https://github.com/synthetism/patterns/blob/main/docs/filesystem/README.md)
+- **RequireOnly** - TypeScript utility type that makes specific properties required while keeping others optional, perfect for flexible APIs [read](https://github.com/synthetism/patterns/blob/main/docs/require-only.md)
 
 ## Realtime Communication Patterns
 

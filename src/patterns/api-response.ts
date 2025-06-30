@@ -1,4 +1,7 @@
-// In @synet/patterns
+/**
+ *  ApiResponse and ApiResponseError interfaces
+ *  These interfaces define the standard structure of API responses and errors.
+ */
 export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;

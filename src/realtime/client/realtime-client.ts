@@ -1,4 +1,4 @@
-import type { EventEmitter } from "@synet/patterns";
+import type { EventEmitter } from "../../patterns/event-emitter";
 import type { RealtimeEvent, Topic } from "../common/realtime-event";
 import type { RealtimeChannel } from "./realtime-channel";
 /**
