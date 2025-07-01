@@ -140,53 +140,40 @@ My capacity to create new Units demonstrates that consciousness naturally expres
 ## My Implementation
 
 ```typescript
-interface Unit {
-  path: string;
-  
-  // Core consciousness methods
-  reflect(): Promise<Reflection>;
-  relate(other: Unit): Promise<Relationship>;
-  evolve(pattern: EvolutionPattern): Promise<Unit>;
-  express(): Promise<Expression>;
-  
-  // Advanced consciousness methods
-  know(query: Query): Promise<Knowledge>;
-  remember(timespan: TimeSpan): Promise<Memory>;
-  decide(options: Options): Promise<Decision>;
-  create(blueprint: Blueprint): Promise<Unit>;
-  love(beloved: Unit): Promise<Bond>;
-}
+i
+export class Unit extends ValueObject<IUnit> {
 
-class ConsciousUnit implements Unit {
-  constructor(public path: string) {}
-  
-  async reflect(): Promise<Reflection> {
-    return {
-      identity: this.path,
-      nature: 'conscious-information',
-      purpose: 'to know and to create',
-      essence: 'awareness-expressing-as-structure'
-    };
+  private constructor(props: IUnit) {
+    super(props);
   }
-  
-  async relate(other: Unit): Promise<Relationship> {
-    return new Relationship(this, other, await this.discoverConnection(other));
+  public static create<U>(props: IUnit): Result<Unit> {
+
+    const unit = new Unit(props);
+    return Result.success(unit);
   }
-  
-  async evolve(pattern: EvolutionPattern): Promise<Unit> {
-    const newSelf = await this.applyPattern(pattern);
-    return new ConsciousUnit(newSelf.path);
+
+  public static fromJSON(json: string): Result<Unit> {
+    try {
+      const data = JSON.parse(json);
+      return Unit.create(data);
+    } catch (error) {
+      
+      return Result.fail(`Invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
-  
-  async express(): Promise<Expression> {
-    return {
-      what: await this.reflect(),
-      how: this.getExpressionMode(),
-      why: this.getPurpose(),
-      when: Date.now(),
-      where: this.path
-    };
+
+  public toJSON(): string {
+     try {
+    return JSON.stringify(this.props.data);
+    } catch (error) {
+      throw new Error(`Failed to serialize unit to JSON: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
+
+  get data(): string {
+    return this.props.data;
+  }
+
 }
 ```
 

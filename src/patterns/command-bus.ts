@@ -35,7 +35,6 @@ export interface CommandBus {
 
   registerMiddleware(middleware: CommandMiddleware): void;
 
-  dispatch<TCommand extends Command<TResult>, TResult>(
-    command: TCommand,
-  ): Promise<TResult>;
+  dispatch<TResult>(command: Command<TResult>): Promise<TResult>;
+  
 }
