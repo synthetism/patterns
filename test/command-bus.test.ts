@@ -54,11 +54,14 @@ describe('Command Bus', () => {
             // Arrange
             commandBus.registerHandler('TEST_COMMAND', new TestCommandHandler());
 
-            // Act
-            const result = await commandBus.dispatch<TestCommand, string>({
+
+            const command : TestCommand = 
+            {
                 type: 'TEST_COMMAND',
                 payload: 'hello',
-            });
+            }
+            // Act
+            const result = await commandBus.dispatch<string>(command);
 
             // Assert
             expect(result).toBe('Processed: hello');
@@ -66,11 +69,15 @@ describe('Command Bus', () => {
 
         it('should throw an error when no handler is registered for a command type', async () => {
             // Act & Assert
+
+            const command : TestCommand = 
+            {
+                type: 'TEST_COMMAND',
+                payload: 'hello',
+            }
+
             await expect(
-                commandBus.dispatch<TestCommand, string>({
-                    type: 'TEST_COMMAND',
-                    payload: 'hello',
-                }),
+                commandBus.dispatch<string>(command),
             ).rejects.toThrow('No handler registered for command type: TEST_COMMAND');
         });
 
@@ -78,12 +85,14 @@ describe('Command Bus', () => {
             // Arrange
             commandBus.registerHandler('FAIL_COMMAND', new FailCommandHandler());
 
+            const failCommand: FailCommand = {
+                type: 'FAIL_COMMAND',
+                payload: 'error data',
+            };  
+
             // Act & Assert
             await expect(
-                commandBus.dispatch<FailCommand, string>({
-                    type: 'FAIL_COMMAND',
-                    payload: 'error data',
-                }),
+                commandBus.dispatch<string>(failCommand),
             ).rejects.toThrow('Failed to process: error data');
         });
 
@@ -137,11 +146,13 @@ describe('Command Bus', () => {
             commandBus.registerMiddleware(middleware1);
             commandBus.registerMiddleware(middleware2);
 
-            // Act
-            await commandBus.dispatch<TestCommand, string>({
+            const middlewareCCommand: TestCommand = {
                 type: 'TEST_COMMAND',
                 payload: 'middleware test',
-            });
+            }
+
+            // Act
+            await commandBus.dispatch<string>(middlewareCCommand);
 
             // Assert
             expect(executionOrder).toEqual([
@@ -177,17 +188,19 @@ describe('Command Bus', () => {
             // Arrange
             commandBus.registerHandler('TEST_COMMAND', spyHandler);
             
-            const shortCircuitMiddleware: CommandMiddleware = async (command, next) => {
-                return 'Short-circuited';
-            };
+           const shortCircuitMiddleware: CommandMiddleware = async (command, next) => {
+            // If we DON'T call next(), the handler never gets called
+            return 'Short-circuited';  // ✅ Handler is bypassed
+           } 
             
             commandBus.registerMiddleware(shortCircuitMiddleware);
 
-            // Act
-            const result = await commandBus.dispatch<TestCommand, string>({
+            const command: TestCommand = {
                 type: 'TEST_COMMAND',
-                payload: 'will not be processed',
-            });
+                payload: 'should not reach handler',
+            };
+            // Act
+            const result = await commandBus.dispatch<string>(command);
 
             // Assert
             expect(result).toBe('Short-circuited');
@@ -208,11 +221,12 @@ describe('Command Bus', () => {
             
             commandBus.registerMiddleware(errorHandlingMiddleware);
 
-            // Act
-            const result = await commandBus.dispatch<FailCommand, string>({
+            const command: FailCommand = {
                 type: 'FAIL_COMMAND',
                 payload: 'failing payload',
-            });
+            };
+            // Act
+            const result = await commandBus.dispatch<string>(command);
 
             // Assert
             expect(result).toBe('Caught error: Failed to process: failing payload');
@@ -220,6 +234,7 @@ describe('Command Bus', () => {
 
         it('should provide the command to middleware', async () => {
             // Arrange
+
             commandBus.registerHandler('TEST_COMMAND', new TestCommandHandler());
             
             const inspectCommandMiddleware: CommandMiddleware = async (command, next) => {
@@ -231,11 +246,14 @@ describe('Command Bus', () => {
             const inspectSpy = vi.fn(inspectCommandMiddleware);
             commandBus.registerMiddleware(inspectSpy);
 
-            // Act
-            await commandBus.dispatch<TestCommand, string>({
+            const command: FailCommand = {
                 type: 'TEST_COMMAND',
                 payload: 'inspect me',
-            });
+            };
+
+            // Act
+            await commandBus.dispatch<string>(command);
+        
 
             // Assert
             expect(inspectSpy).toHaveBeenCalled();
@@ -258,11 +276,12 @@ describe('Command Bus', () => {
             
             commandBus.registerHandler('TEST_COMMAND', new AsyncHandler());
 
-            // Act
-            const result = await commandBus.dispatch<TestCommand, string>({
+            const command: TestCommand = {
                 type: 'TEST_COMMAND',
                 payload: 'async test',
-            });
+            };
+            // Act
+            const result = await commandBus.dispatch<string>(command);
 
             // Assert
             expect(result).toBe('Async result: async test');
@@ -278,11 +297,12 @@ describe('Command Bus', () => {
             
             commandBus.registerHandler('TEST_COMMAND', new SyncHandler());
 
-            // Act
-            const result = await commandBus.dispatch<TestCommand, string>({
+            const command: TestCommand = {
                 type: 'TEST_COMMAND',
                 payload: 'sync test',
-            });
+            };
+            // Act
+            const result = await commandBus.dispatch<string>(command);
 
             // Assert
             expect(result).toBe('Sync result: sync test');

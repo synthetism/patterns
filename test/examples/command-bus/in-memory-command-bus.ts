@@ -41,8 +41,8 @@ export class InMemoryCommandBus implements CommandBus {
     /**
      * Dispatch a command through the middleware chain to its handler
      */
-    async dispatch<TCommand extends Command<TResult>, TResult>(
-        command: TCommand,
+    async dispatch<TResult>(
+        command: Command<TResult>,
     ): Promise<TResult> {
         const handler = this.handlers.get(command.type);
 
@@ -53,21 +53,16 @@ export class InMemoryCommandBus implements CommandBus {
         }
 
         // Execute middleware chain
-        let index = 0;
-        const executeNext = async (): Promise<TResult> => {
-            if (index < this.middlewares.length) {
-                const middleware = this.middlewares[index++];
-                return middleware(command, executeNext);
-            }
-           
-            
-            // Cast is safe because we maintain the type association when registering
-            const typedHandler = handler as CommandHandler<TCommand, TResult>;
-            return await Promise.resolve(typedHandler.handle(command));
-           
-        };
+       // Build the middleware chain
+        const executeHandler = () => handler.handle(command);
+        
+        // Apply middlewares in reverse order (last registered runs first in the chain)
+        const middlewareChain = this.middlewares.reduceRight(
+        (next, middleware) => () => middleware(command, next),
+        executeHandler
+        );
 
-        return executeNext();
+        return middlewareChain();
     }
 }
 
